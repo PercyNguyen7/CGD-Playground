@@ -89,7 +89,7 @@ p{
 }
 .scroll-tracker{
     height:1px;
-    background-color: hsl(var(--clr-pink));
+    background-color: hsl(var(--clr-orange));
     position: fixed;
     inset: 4rem 0 auto;
     z-index: 999;
