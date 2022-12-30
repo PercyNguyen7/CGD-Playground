@@ -24,9 +24,9 @@
     --clr-white: 357 35% 93%;
     --clr-orange: 22 91% 70%;
 
-    --clr-burgundy: 216 69% 28%;
+    /* --clr-burgundy: 216 69% 28%;
     --clr-brown: 254 36% 44%;
-    --clr-orange: 335 100% 71%;
+    --clr-orange: 335 100% 71%; */
 
     --clr-yellow: 49, 93%, 45%;
     /* font-sizes */
@@ -98,7 +98,7 @@ p{
 
 #spotlight-sect{
   margin-top:4rem;
-  background-color: hsl(var(--clr-orange) /60%);
+  background-color: hsl(var(--clr-brown) /60%);
   width: 100%;
   text-align: center;
   /* height: 10rem; */
