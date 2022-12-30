@@ -1,3 +1,5 @@
+// import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+import'https://rawcdn.githack.com/flackr/scroll-timeline/3063e156535f3ab1ffc8a4000ffdd3290232c121/dist/scroll-timeline.js';
 let menuBtn = document.querySelector('.menu-btn');
 let galleryCloseBtn = document.getElementById('gallery-close-btn');
 let galleryRightArrow = document.getElementById('gallery-right-arrow');
@@ -219,7 +221,68 @@ function slideRightImg(){
 // }
     // imgNext.clas
 }
+const scrollTracker = document.querySelector('.scroll-tracker');
+
+const animatedImage = document.querySelector(".img-rotate");
+const animatedImageOffsetTop = animatedImage.offsetTop;
+const animatedImageHeight = animatedImage.offsetHeight;
+
+const animatedImageTimeline = new ScrollTimeline({
+
+    // scrollOffsets:[
+    //     { target: animatedImage, edge:"start", threshold: '1'},
+    //     { target: animatedImage, edge:"end", threshold: '1'}
+    // ],
+         scrollOffsets:[
+         CSS.px(animatedImageOffsetTop + animatedImageHeight - window.innerHeight -200),
+        CSS.px(animatedImageOffsetTop + 1000),
+    ],
+    
+});
+//scrollbar
+const scrollTrackingTimeline = new ScrollTimeline({
+    source: document.scrollingElement,
+    orientation: 'block',
+    scrollOffsets: [CSS.percent(0), CSS.percent(100)],
+});
+
+scrollTracker.animate(
+    {   
+      transform: ['scaleX(0)', 'scaleX(1)']
+    },
+    {
+        duration: 1,
+        timeline: scrollTrackingTimeline,
+    }
+)
+
+animatedImage.animate(
+    {
+     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(25deg) rotateY(0deg)"] ,
+    //   opacity:['0','1'] 
+    },
+    {
+        duration:1,
+        easing:'linear',
+        timeline: animatedImageTimeline,
+        // timeline: new ScrollTimeline({
+        //     // scrollOffsets:[
+        //     //     CSS.px(dsWrapperOffsetTop + dsWrapperHeight - window.innerHeight),
+        //     //     CSS.px(dsWrapperOffsetTop),
+        //     // ]
+          
+        //     // scrollOffsets:[
+        //     //     { target: dsWrapper, edge:"start", threshold: '1'},
+        //     //     { target: dsWrapper, edge:"end", threshold: '1'},
+        //     //    ],
+        // })
+    }
+);
+
+
+
 function slideLeftImg(){
+    console.log(animatedImageOffsetTop,animatedImagerHeight);
     // if middle is current Img
         if(img2.classList.contains("current-img")){
             img2.classList.remove('current-img');
@@ -269,29 +332,4 @@ function slideLeftImg(){
         // imgNext.clas
     }
 
-    // var windowWidth = window.innerWidth;
 
-    // var horLength = document.querySelector(".element-wrapper").scrollWidth;
-    // var horLength2 = document.querySelector(".element-wrapper2").scrollWidth;
-    
-    // var distFromTop = document.querySelector(".horizontal-section").offsetTop;
-    // var distFromTop2 = document.querySelector(".horizontal-section2").offsetTop;
-    
-    // var scrollDistance = distFromTop + horLength - windowWidth;
-    // var scrollDistance2 = distFromTop2 + horLength2 - windowWidth;
-    
-    // // document.querySelector(".horizontal-section").style.height = horLength + "px";
-    
-    // // document.querySelector(".horizontal-section2").style.height = horLength2 + "px";
-    
-    // window.onscroll = function(){
-    //   var scrollTop = window.pageYOffset;
-      
-    //   if (scrollTop >= distFromTop && scrollTop <= scrollDistance) {
-    //     document.querySelector(".element-wrapper").style.transform = "translateX(-"+(scrollTop - distFromTop)+"px)";
-    //   }
-      
-    //   if (scrollTop >= distFromTop2 && scrollTop <= scrollDistance2) {
-    //     document.querySelector(".element-wrapper2").style.transform = "translateX(-"+(scrollTop - distFromTop2)+"px)";
-    //   }
-    // }

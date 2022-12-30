@@ -15,11 +15,19 @@
 }
   :root {
     /* colors */
+    --clr-pink: 345 100% 66%;
+    --clr-purple: 253 36% 31%;
+    --clr-dark-purple: 302 51% 14%;
+
     --clr-burgundy: 330 60% 19%;
     --clr-brown: 11 45% 39%;
     --clr-white: 357 35% 93%;
     --clr-orange: 22 91% 70%;
-    --clr-pink: 345 100% 66%;
+
+    --clr-burgundy: 216 69% 28%;
+    --clr-brown: 254 36% 44%;
+    --clr-orange: 335 100% 71%;
+
     --clr-yellow: 49, 93%, 45%;
     /* font-sizes */
     --fs-900: clamp(6rem,20vw, 40rem);
@@ -79,20 +87,30 @@ text-transform: uppercase;} */
 p{
     font-size:1rem;
 }
+.scroll-tracker{
+    height:1px;
+    background-color: hsl(var(--clr-pink));
+    position: fixed;
+    inset: 4rem 0 auto;
+    z-index: 999;
+    transform-origin: left;
+}
+
 #spotlight-sect{
   margin-top:4rem;
-  background-color: hsl(360 45% 39% /60%);
+  background-color: hsl(var(--clr-orange) /60%);
   width: 100%;
   text-align: center;
   /* height: 10rem; */
   padding: 3rem 0rem;
+  overflow-x: hidden;
 }
 .spotlight-content-wrapper{
     padding-inline:1rem;
 }
 .past-events-content-wrapper{
     /* border: 2px solid hsl(var(--clr-orange)); */
-    padding:1rem 0 1rem 1rem;
+    padding:1rem ;
 }
 
 
@@ -740,6 +758,9 @@ main {
         opacity: 0.3;
         transform: rotate(-30deg);
     }
+    .scroll-tracker{
+        inset: 0 0 auto;
+    }
     .spotlight-content-wrapper{
         width: 100%;
         margin: auto;
@@ -789,11 +810,11 @@ main {
     }
     @supports (backdrop-filter: blur(1rem)) {
         .primary-navigation{
-            background-color: hsl(330,63%,19%,70%);;
+            background-color: hsl(var(--clr-burgundy)/70%);;
             backdrop-filter: blur(3rem);
         }
         #spotlight-sect{
-            background-color: hsl(var(--clr-brown)/ 70%);
+            background-color: hsl(var(--clr-brown)/ 60%);
             backdrop-filter: blur(0.75rem);
         }
     }
@@ -1170,15 +1191,19 @@ body::-webkit-scrollbar-track,
 .screen-2::-webkit-scrollbar-track{
     box-shadow: inset 0 0 4px rgb(15, 15, 15);
   /* border-radius: 10px; */
-  background-color: rgb(35, 35, 35);
+  background-color: rgba(35, 35, 35);
 }
 
 body::-webkit-scrollbar,
 .screen-2::-webkit-scrollbar{
-  width: 12px;
+  width:7px;
   background-color: transparent;
 }
-
+body::-webkit-scrollbar:hover,
+.screen-2::-webkit-scrollbar:hover{
+  width:10px;
+  background-color: transparent;
+}
 body::-webkit-scrollbar-thumb,
 .screen-2::-webkit-scrollbar-thumb{
   border-radius: 5px;
