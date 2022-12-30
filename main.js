@@ -258,7 +258,7 @@ scrollTracker.animate(
 
 animatedImage.animate(
     {
-     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(25deg) rotateY(0deg)"] ,
+     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(30deg) rotateY(0deg)"] ,
     //   opacity:['0','1'] 
     },
     {
