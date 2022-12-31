@@ -404,13 +404,15 @@ function moveCursor(e){
 }
 
 // const headings = ;
-let headings = Array.from(document.querySelectorAll("h1,h2,h3,p"));
+let headings = Array.from(document.querySelectorAll(".clickable"));
 headings.forEach((headings) => {
     headings.addEventListener("mouseover",()=>{
         innerCursor.classList.add("grow");
+        outerCursor.classList.add("grow");
     });
     headings.addEventListener("mouseleave",()=>{
         innerCursor.classList.remove("grow");
+        outerCursor.classList.remove("grow");
     });
 });
 

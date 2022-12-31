@@ -65,6 +65,7 @@ text-transform: uppercase;} */
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
+    cursor:none;
     /* min-height: 120vh; */
   }
   header{
@@ -672,14 +673,15 @@ transition: all 0.2s ease-in-out;
 .inner-cursor{
     position:absolute;
     left:10px;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     transform:translate(-50%,-50%);
-    border: 2px solid hsl( var(--clr-orange) );
-    background-color: transparent;
+    background-color: hsl( var(--clr-orange)/80% );
+    /* border: 3px solid hsl( var(--clr-orange) ); */
+    /* background-color: transparent; */
     border-radius: 50%;
     pointer-events:none;
-    transition: width 0.5s, height 0.5s, opacity 0.5s; 
+    transition: width 0.2s, height 0.2s, opacity 0.2s, background-color 0.2s; 
     /* opacity: 0; */
     z-index: 9999;
 }
@@ -689,29 +691,36 @@ transition: all 0.2s ease-in-out;
     height:200px;
     mix-blend-mode:difference;
     /* opacity: 1; */
-    background-color: rgb(32, 49, 122);
+    background-color: rgb(63, 32, 122);
     border: 10px solid hsl( var(--clr-orange) );
-    transition: width 0.5s, height 0.5s, opacity 0.5s; 
-    z-index: 9999;
+    transition: width 0.2s, height 0.2s, opacity 0.2s, background-color 0.2s; 
+    /* filter: blur(0.3rem); */
 }
 .hidden-cursor{
     opacity:0;
-    transition: opacity 0.5s;
+    transition: opacity 0.2s;
 }
 
-/* .outer-cursor{
+.outer-cursor{
     position:absolute;
     left:10px;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     transform:translate(-50%,-50%);
-    border: 1px solid hsl( var(--clr-orange) );
+    border: 2px solid hsl( var(--clr-orange) );
     border-radius: 50%;
     pointer-events: none;
-
+    opacity:1;
+    transition: width 0.2s, height 0.2s, opacity 0.2s; 
     z-index: 9999;
-} */
-
+}
+.outer-cursor.grow{
+    width: 600px;
+    height: 600px;
+    /* border: 3px solid hsl( var(--clr-orange) ); */
+    opacity:0;
+    transition: width 0.2s, height 0.2s, opacity 0.2s; 
+}
     @media (max-width:34.99em){
         .v-stretch{
             grid-row:span 1;
