@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="./css/index.css">
     <!-- <link rel="icon" href="assets/images/icons/logo-dark.ico" sizes="any"> -->
     <link rel="icon" href="assets/images/OG-logo.png" type="image/svg+xml">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 <body>
+    
     <header>
         <div class="nav-logo-mobile"></div>
-        <nav class="primary-navigation flex">
+        <nav class="primary-navigation flex no-cursor">
             <div class="nav-logo"></div>
             <div class="nav-logo-mobile-bg"></div>
             <div class="tabs-menu flex">
@@ -58,8 +60,8 @@
     <section id="spotlight-sect">
         <div class="spotlight-content-wrapper">
             <div class="gamepad-icon big-icons"></div>
-            <h1 class="ff-title white-text fs-h1">Upcoming Events</h1>
-
+            <h1 id="hello" class="ff-title white-text fs-h1">Upcoming Event</h1>
+            <h1 id="typed-content" class="ff-title white-text fs-h1"></h1>
             <!-- <div class="screen">
                 <div id="slides-wrapper" class="slides-wrapper flex" data-slide="1">
                     <img src="./assets/images/team.jpg" class="slide-1 slides"></img>
@@ -85,11 +87,11 @@
             <div class="mid-ds"></div>
             <div class="bottom-ds flex">
                 <div class="left-controls-ds">
-                     <div class="up-button-ds"></div>
+                     <div class="up-button-ds no-cursor"></div>
                     <div class="middle-button-ds"></div>
-                    <div class="left-button-ds"></div>
-                    <div class="right-button-ds"></div>
-                    <div class="down-button-ds"></div>
+                    <div class="left-button-ds no-cursor"></div>
+                    <div class="right-button-ds no-cursor"></div>
+                    <div class="down-button-ds no-cursor"></div>
                    
                 </div>
                 <div class="screen-2">
@@ -110,10 +112,10 @@
                     </div>
                 </div>
                 <div class="right-controls-ds ff-para orange-text">
-                    <div class="x-button-ds">X</div>
-                    <div class="b-button-ds">B</div>
-                    <div class="y-button-ds">Y</div>
-                    <div class="a-button-ds">A</div>
+                    <div class="x-button-ds no-cursor">X</div>
+                    <div class="b-button-ds no-cursor">B</div>
+                    <div class="y-button-ds no-cursor">Y</div>
+                    <div class="a-button-ds no-cursor">A</div>
                 </div>
             </div>
         </div>
@@ -177,7 +179,7 @@
 
     <section id="gallery-sect">
         <h2 class="ff-title white-text">CGD in Action!</h2>
-        <div class="gallery">
+        <div class="gallery no-cursor">
             <figure class="img-wrappers v-stretch">
                 <img loading="lazy" src="assets/images/team.jpg" alt="">
             </figure>
@@ -264,7 +266,8 @@
 
 
     <script src="main.js" type="module"></script>
-  
+    <div class="inner-cursor"></div>
+    <div class="outer-cursor"></div>
 </body>
 
 </html>

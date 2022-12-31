@@ -332,4 +332,94 @@ function slideLeftImg(){
         // imgNext.clas
     }
 
+    const titleText = document.getElementById('hello');
 
+        function setData() {
+        const txt = `Upcoming Events`;
+        return [txt, titleText]
+        };
+
+        function typeText() {
+          
+        const res =  setData();
+        const txt = res[0];
+        // const titleText = res[1];
+        let i = 0;
+        const timerId = setInterval(() => {
+        titleText.innerHTML += txt.charAt(i);
+        i++;
+        if (i === txt.length) {
+        clearInterval(timerId);
+        }
+        },50);
+        }
+        // function setData() {
+        // const txt = `Watch me as I get typed out before your very eyes using JavaScript's setInterval() function.`;
+        // const outputDiv = document.getElementById('typed-content');
+        // return [txt, outputDiv]
+        // };
+        
+        // function typeText() {
+        // const res =  setData();
+        // const txt = res[0];
+        // const outputDiv = res[1];
+        // let i = 0;
+        // const timerId = setInterval(() => {
+        // outputDiv.innerHTML += txt.charAt(i);
+        // i++;
+        // if (i === txt.length) {clearInterval(timerId);}
+        // },50);
+        // }
+     
+
+
+window.addEventListener("load", ()=>{
+    titleText.innerHTML='';
+    typeText();
+} );
+window.addEventListener("keydown", function (event) {
+    // If eye looks left
+    if (event.key == "d") {
+        titleText.innerHTML='';
+   typeText();
+   console.log(setData())
+    }
+});
+
+let innerCursor = document.querySelector('.inner-cursor');
+let outerCursor = document.querySelector('.outer-cursor');
+
+document.addEventListener('mousemove',moveCursor);
+
+function moveCursor(e){
+    let x = e.clientX;
+    let y = e.clientY;
+
+    innerCursor.style.left =e.pageX + "px";
+    innerCursor.style.top =e.pageY + "px";
+    outerCursor.style.left =e.pageX + "px";
+    outerCursor.style.top =e.pageY + "px";
+    
+    console.log(x,y);
+}
+
+// const headings = ;
+let headings = Array.from(document.querySelectorAll("h1,h2,h3,p"));
+headings.forEach((headings) => {
+    headings.addEventListener("mouseover",()=>{
+        innerCursor.classList.add("grow");
+    });
+    headings.addEventListener("mouseleave",()=>{
+        innerCursor.classList.remove("grow");
+    });
+});
+
+let noCursorElements = Array.from(document.querySelectorAll(".no-cursor"));
+noCursorElements.forEach((noCursorElements) => {
+    noCursorElements.addEventListener("mouseover",()=>{
+        innerCursor.classList.add("hidden");
+    });
+    noCursorElements.addEventListener("mouseleave",()=>{
+        innerCursor.classList.remove("hidden");
+    });
+});
