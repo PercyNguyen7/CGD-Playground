@@ -258,7 +258,7 @@ scrollTracker.animate(
 
 animatedImage.animate(
     {
-     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(30deg) rotateY(0deg)"] ,
+     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(40deg) rotateY(0deg)"] ,
     //   opacity:['0','1'] 
     },
     {
@@ -395,11 +395,14 @@ function moveCursor(e){
     let x = e.clientX;
     let y = e.clientY;
 
-    innerCursor.style.left =e.pageX + "px";
-    innerCursor.style.top =e.pageY + "px";
-    outerCursor.style.left =e.pageX + "px";
-    outerCursor.style.top =e.pageY + "px";
+    // innerCursor.style.left =e.pageX + "px";
+    // innerCursor.style.top =e.pageY + "px";
+    // outerCursor.style.left =e.pageX + "px";
+    // outerCursor.style.top =e.pageY + "px";
     
+    innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+    outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+
     console.log(x,y);
 }
 
