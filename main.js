@@ -223,28 +223,53 @@ function slideRightImg(){
 }
 const scrollTracker = document.querySelector('.scroll-tracker');
 
-const animatedImage = document.querySelector(".img-rotate");
-const animatedImageOffsetTop = animatedImage.offsetTop;
-const animatedImageHeight = animatedImage.offsetHeight;
+const dsRotate = document.querySelector(".ds-3d-rotate");
+const animatedHeadings = document.querySelectorAll(".slide-lr-scroll");
+const dsRotateOffsetTop = dsRotate.offsetTop;
+const dsRotateHeight = dsRotate.offsetHeight;
 
-const animatedImageTimeline = new ScrollTimeline({
+animatedHeadings.forEach((heading)=>{
+    const headingOffsetTop = heading.offsetTop;
+    const headingOffsetHeight = heading.offsetHeight;
 
-    // scrollOffsets:[
-    //     { target: animatedImage, edge:"start", threshold: '1'},
-    //     { target: animatedImage, edge:"end", threshold: '1'}
-    // ],
-         scrollOffsets:[
-         CSS.px(animatedImageOffsetTop + animatedImageHeight - window.innerHeight -200),
-        CSS.px(animatedImageOffsetTop + 1000),
-    ],
+
+
+    heading.animate(
+        {   
+          transform: ['translateX(-600px)', 'translateX(1000px)']
+        },
+        {
+            duration: 1,
+            easing: 'linear',
+            timeline: new ScrollTimeline({
+                scrollOffsets:[
+                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight),
+                            CSS.px(headingOffsetTop),
+                        ],
+            }),
+        }
+    );
+});
+
+
+// const dsRotateTimeline = new ScrollTimeline({
+
+//     // scrollOffsets:[
+//     //     { target: dsRotate, edge:"start", threshold: '1'},
+//     //     { target: dsRotate, edge:"end", threshold: '1'}
+//     // ],
+//          scrollOffsets:[
+//          CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight -200),
+//         CSS.px(dsRotateOffsetTop + 1000),
+//     ],
     
-});
+// });
 //scrollbar
-const scrollTrackingTimeline = new ScrollTimeline({
-    source: document.scrollingElement,
-    orientation: 'block',
-    scrollOffsets: [CSS.percent(0), CSS.percent(100)],
-});
+// const scrollTrackingTimeline = new ScrollTimeline({
+//     source: document.scrollingElement,
+//     orientation: 'block',
+//     scrollOffsets: [CSS.percent(0), CSS.percent(100)],
+// });
 
 scrollTracker.animate(
     {   
@@ -252,11 +277,13 @@ scrollTracker.animate(
     },
     {
         duration: 1,
-        timeline: scrollTrackingTimeline,
+        timeline: new ScrollTimeline({
+            scrollOffsets: [CSS.percent(0), CSS.percent(100)],
+        }),
     }
 )
 
-animatedImage.animate(
+dsRotate.animate(
     {
      transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(40deg) rotateY(0deg)"] ,
     //   opacity:['0','1'] 
@@ -264,25 +291,25 @@ animatedImage.animate(
     {
         duration:1,
         easing:'linear',
-        timeline: animatedImageTimeline,
-        // timeline: new ScrollTimeline({
-        //     // scrollOffsets:[
-        //     //     CSS.px(dsWrapperOffsetTop + dsWrapperHeight - window.innerHeight),
-        //     //     CSS.px(dsWrapperOffsetTop),
-        //     // ]
+        // timeline: dsRotateTimeline,
+        timeline: new ScrollTimeline({
+            scrollOffsets:[
+                CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight -200),
+               CSS.px(dsRotateOffsetTop + 1000),
+           ],
           
-        //     // scrollOffsets:[
-        //     //     { target: dsWrapper, edge:"start", threshold: '1'},
-        //     //     { target: dsWrapper, edge:"end", threshold: '1'},
-        //     //    ],
-        // })
+            // scrollOffsets:[
+            //     { target: dsRotate, edge:"start", threshold: '1'},
+            //     { target: dsRotate, edge:"end", threshold: '1'},
+            //    ],
+        })
     }
 );
 
 
 
 function slideLeftImg(){
-    console.log(animatedImageOffsetTop,animatedImagerHeight);
+    console.log(dsRotateOffsetTop,dsRotaterHeight);
     // if middle is current Img
         if(img2.classList.contains("current-img")){
             img2.classList.remove('current-img');
@@ -332,58 +359,58 @@ function slideLeftImg(){
         // imgNext.clas
     }
 
-    const titleText = document.getElementById('hello');
+    // const titleText = document.getElementById('hello');
 
-        function setData() {
-        const txt = `Upcoming Events`;
-        return [txt, titleText]
-        };
+    //     function setData() {
+    //     const txt = `Upcoming Events`;
+    //     return [txt, titleText]
+    //     };
 
-        function typeText() {
+    //     function typeText() {
           
-        const res =  setData();
-        const txt = res[0];
-        // const titleText = res[1];
-        let i = 0;
-        const timerId = setInterval(() => {
-        titleText.innerHTML += txt.charAt(i);
-        i++;
-        if (i === txt.length) {
-        clearInterval(timerId);
-        }
-        },50);
-        }
-        // function setData() {
-        // const txt = `Watch me as I get typed out before your very eyes using JavaScript's setInterval() function.`;
-        // const outputDiv = document.getElementById('typed-content');
-        // return [txt, outputDiv]
-        // };
+    //     const res =  setData();
+    //     const txt = res[0];
+    //     // const titleText = res[1];
+    //     let i = 0;
+    //     const timerId = setInterval(() => {
+    //     titleText.innerHTML += txt.charAt(i);
+    //     i++;
+    //     if (i === txt.length) {
+    //     clearInterval(timerId);
+    //     }
+    //     },50);
+    //     }
+    //     // function setData() {
+    //     // const txt = `Watch me as I get typed out before your very eyes using JavaScript's setInterval() function.`;
+    //     // const outputDiv = document.getElementById('typed-content');
+    //     // return [txt, outputDiv]
+    //     // };
         
-        // function typeText() {
-        // const res =  setData();
-        // const txt = res[0];
-        // const outputDiv = res[1];
-        // let i = 0;
-        // const timerId = setInterval(() => {
-        // outputDiv.innerHTML += txt.charAt(i);
-        // i++;
-        // if (i === txt.length) {clearInterval(timerId);}
-        // },50);
-        // }
+    //     // function typeText() {
+    //     // const res =  setData();
+    //     // const txt = res[0];
+    //     // const outputDiv = res[1];
+    //     // let i = 0;
+    //     // const timerId = setInterval(() => {
+    //     // outputDiv.innerHTML += txt.charAt(i);
+    //     // i++;
+    //     // if (i === txt.length) {clearInterval(timerId);}
+    //     // },50);
+    //     // }
      
 
 
 window.addEventListener("load", ()=>{
-    titleText.innerHTML='';
-    typeText();
-} );
-window.addEventListener("keydown", function (event) {
-    // If eye looks left
-    if (event.key == "d") {
-        titleText.innerHTML='';
-   typeText();
-   console.log(setData())
-    }
+//     titleText.innerHTML='';
+//     typeText();
+// } );
+// window.addEventListener("keydown", function (event) {
+//     // If eye looks left
+//     if (event.key == "d") {
+//         titleText.innerHTML='';
+//    typeText();
+//    console.log(setData())
+//     }
 });
 
 let innerCursor = document.querySelector('.inner-cursor');
@@ -395,13 +422,13 @@ function moveCursor(e){
     let x = e.clientX;
     let y = e.clientY;
 
-    // innerCursor.style.left =e.pageX + "px";
-    // innerCursor.style.top =e.pageY + "px";
-    // outerCursor.style.left =e.pageX + "px";
-    // outerCursor.style.top =e.pageY + "px";
+    innerCursor.style.left =e.pageX + "px";
+    innerCursor.style.top =e.pageY + "px";
+    outerCursor.style.left =e.pageX + "px";
+    outerCursor.style.top =e.pageY + "px";
     
-    innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
-    outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+    // innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+    // outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
 
     console.log(x,y);
 }
