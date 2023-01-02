@@ -367,7 +367,7 @@ function slideLeftImg(){
         // imgNext.clas
     }
 
-    // const titleText = document.getElementById('hello');
+    // const titleText = document.getElementById('page-heading');
 
     //     function setData() {
     //     const txt = `Upcoming Events`;
