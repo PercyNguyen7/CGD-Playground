@@ -571,7 +571,7 @@ transition: all 0.2s ease-in-out;
   }
   #gallery-sect{
     max-width: 70rem;
-    margin: 3rem auto;
+    margin: 3rem auto 10rem;
     padding: 1rem;
 }
 .gallery{
@@ -889,6 +889,10 @@ transition: all 0.2s ease-in-out;
             background-color: hsl(var(--clr-brown)/ 60%);
             backdrop-filter: blur(0.75rem);
         }
+        .gallery{
+            background-color: hsl(var(--clr-brown)/ 60%);
+            backdrop-filter: blur(4rem);
+        }
     }
 }
   @media (min-width: 45em) {
@@ -1058,6 +1062,10 @@ transition: all 0.2s ease-in-out;
             background-color: hsl(var(--clr-brown)/50%);
             backdrop-filter: blur(0.5rem);
         }
+        .gallery{
+            background-color: hsl(var(--clr-burgundy)/ 60%);
+            backdrop-filter: blur(0.5rem);
+        }
     }
 }
 
@@ -1077,7 +1085,7 @@ transition: all 0.2s ease-in-out;
 }
 .circles{
     position:absolute;
-    bottom: 0;
+    bottom: -0;
     left: 0;
     width: 100%;
     /* min-height: 500vh; */
@@ -1097,7 +1105,7 @@ transition: all 0.2s ease-in-out;
     /* background: rgba(255, 255, 255, 0.2); */
     background-color: hsl(var(--clr-burgundy)/0.5);
     animation: float-top 160s linear infinite;
-    bottom: -150px; 
+    bottom: -300px; 
 }
 .circles li:nth-child(1){
     left: 25%;
@@ -1139,8 +1147,8 @@ transition: all 0.2s ease-in-out;
 }
 .circles li:nth-child(7){
     left: 35%;
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     animation-delay: 7s;
 }
 .circles li:nth-child(8){
@@ -1165,7 +1173,7 @@ transition: all 0.2s ease-in-out;
     animation-duration: 135s;
 }
 .circles li{
-    background: url(../assets/images/icons/logo-bg-02.svg) center center / contain no-repeat;
+    background: url(../assets/images/cgd-transparent.png) center center / contain no-repeat;
 }
 /* .circles li :hover{
     transform: scale();
