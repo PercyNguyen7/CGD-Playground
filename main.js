@@ -236,7 +236,7 @@ animatedHeadings.forEach((heading)=>{
 
     heading.animate(
         {   
-          transform: ['translateX(-100vw)', 'translateX(100vw)']
+          transform: ['translateX(-50vw)', 'translateX(100vw)']
         },
         {
             duration: 1,
