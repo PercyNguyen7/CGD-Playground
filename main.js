@@ -17,6 +17,7 @@ let tabsWrappers = document.getElementsByClassName('tabs-wrappers');
 let primaryNav = document.querySelector('.primary-navigation');
 let leftArrow = document.getElementById('left-arrow');
 let rightArrow = document.getElementById('right-arrow');
+let dsScreen2 = document.querySelector('.screen-2')
 let menuOpen = false;
 let slidesWrapper = document.getElementById('slides-wrapper');
 let slideIndicators = document.getElementsByClassName('slide-indicators');
@@ -65,25 +66,28 @@ leftArrow.addEventListener('click', () => {
     console.log('3');
     slideIndicators[0].classList.remove('active');
     slideIndicators[2].classList.add('active');
-    
+    dsScreen2.setAttribute('data-color',3);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 2){
         slidesWrapper.setAttribute('data-slide',1);
         console.log('1');
         slideIndicators[1].classList.remove('active');
         slideIndicators[0].classList.add('active');
+        dsScreen2.setAttribute('data-color',1);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 3){
         slidesWrapper.setAttribute('data-slide',2);
         console.log('2');
         slideIndicators[2].classList.remove('active');
         slideIndicators[1].classList.add('active');
+        dsScreen2.setAttribute('data-color',2);
     } 
 });
 
 rightArrow.addEventListener('click', () => {
    
     if (slidesWrapper.getAttribute("data-slide") == 1){
+    
     slidesWrapper.setAttribute('data-slide',2);
     console.log('2');
     // for (let n=0 ; n < slideIndicators.length; n++){
@@ -91,18 +95,21 @@ rightArrow.addEventListener('click', () => {
     // }
     slideIndicators[0].classList.remove('active');
     slideIndicators[1].classList.add('active');
+    dsScreen2.setAttribute('data-color',2);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 2){
         slidesWrapper.setAttribute('data-slide',3);
         console.log('3');
         slideIndicators[1].classList.remove('active');
         slideIndicators[2].classList.add('active');
+        dsScreen2.setAttribute('data-color',3);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 3){
         slidesWrapper.setAttribute('data-slide',1);
         console.log('1');
         slideIndicators[2].classList.remove('active');
         slideIndicators[0].classList.add('active');
+        dsScreen2.setAttribute('data-color',1);
     } 
 });
 
@@ -245,7 +252,7 @@ animatedHeadings.forEach((heading)=>{
             timeline: new ScrollTimeline({
                 scrollOffsets:[
                             CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight),
-                            CSS.px(headingOffsetTop +200),
+                            CSS.px(headingOffsetTop -300),
                         ],
             }),
         }
@@ -431,7 +438,7 @@ function moveCursor(e){
     // innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
     // outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
 
-    console.log(x,y);
+    // console.log(x,y);
 }
 
 // const headings = ;
@@ -456,3 +463,57 @@ noCursorElements.forEach((noCursorElements) => {
         innerCursor.classList.remove("hidden");
     });
 });
+
+let lightMode = localStorage.getItem('lightMode');
+let currentMode = 0;
+const lightModeToggle = document.querySelector("#light-mode-toggle");
+
+const enableLightMode = ()=>{
+    document.body.classList.add('light-mode');
+    localStorage.setItem('lightMode','enabled');
+};
+
+const disableLightMode = ()=>{
+    document.body.classList.remove('light-mode');
+    localStorage.removeItem('lightMode',null);
+};
+
+const modeBtn = document.querySelector("#mode-btn");
+
+
+if (lightMode === "enabled"){
+    console.log('let there be light')
+    modeBtn.classList.add("light-active");
+    enableLightMode();
+}
+
+lightModeToggle.addEventListener('click', ()=>{
+
+    console.log(lightMode);
+    // if (currentMode ==0){
+    //     currentMode++;
+    //     modeBtn.classList.remove("light-active");
+    //     enableLightMode();
+    // }
+    // else if (currentMode ==1){
+    //     currentMode++;
+    //     disableLightMode();
+    // modeBtn.classList.add("light-active");
+    // }
+
+    // if (currentMode >1){
+     
+    //     currentMode = 0;
+    // }
+    // console.log(currentMode);
+    if (localStorage.getItem('lightMode') === null){
+        
+        enableLightMode();
+        console.log('click');
+        modeBtn.classList.add("light-active");
+    } else{
+        disableLightMode();
+        modeBtn.classList.remove("light-active");
+    }
+});
+
