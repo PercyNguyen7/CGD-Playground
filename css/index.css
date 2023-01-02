@@ -106,12 +106,12 @@ text-transform: uppercase;} */
         border-radius: 25px;
         background-color: hsl( var(--clr-brown));
         transform: translateY(47px);
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
     .mode-btn.light-active{
         background-color: hsl( var(--clr-burgundy));
         transform: translateY(0px);
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
     }
   .ff-para{font-family: 'CorbertReg',sans-serif;}
   .ff-title{font-family: 'LeagueSpartan',sans-serif;}
