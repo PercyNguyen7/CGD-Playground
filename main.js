@@ -236,7 +236,7 @@ animatedHeadings.forEach((heading)=>{
 
     heading.animate(
         {   
-          transform: ['translateX(-600px)', 'translateX(1000px)']
+          transform: ['translateX(-100vw)', 'translateX(100vw)']
         },
         {
             duration: 1,
@@ -244,7 +244,7 @@ animatedHeadings.forEach((heading)=>{
             timeline: new ScrollTimeline({
                 scrollOffsets:[
                             CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight),
-                            CSS.px(headingOffsetTop),
+                            CSS.px(headingOffsetTop +200),
                         ],
             }),
         }
