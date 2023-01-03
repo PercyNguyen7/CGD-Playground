@@ -165,7 +165,7 @@ p{
     font-size:1rem;
 }
 .primary-navigation{
-    transition-delay: 0.05s;
+    /* transition-delay: 0.05s; */
 }
 .scroll-tracker{
     height:2px;
@@ -184,10 +184,10 @@ p{
   /* height: 10rem; */
   padding: 3rem 0rem;
   overflow-x: hidden;
-  transition-delay: 0.1s;
+  /* transition-delay: 0.1s; */
 }
 #page-heading{
-    transition-delay: 0.15s;
+    /* transition-delay: 0.15s; */
 }
 .spotlight-content-wrapper{
     padding-inline:1rem;
@@ -387,7 +387,7 @@ background-color: hsl(var(--clr-brown)/90%);
 .top-ds{
     position: relative;
     border-radius: 50px 50px 10px 10px ;
-    transition-delay: 0.2s;
+    /* transition-delay: 0.2s; */
     z-index: 1;
 }
 .mid-ds{
@@ -398,7 +398,7 @@ background-color: hsl(var(--clr-brown)/90%);
     background-color: hsl(var(--clr-ds)/80%);
     border: 1px hsl(var(--clr-orange)) solid;
     margin:auto;
-    transition-delay: 0.25s;
+    /* transition-delay: 0.25s; */
     z-index: 2;
 }
 .bottom-ds{
@@ -407,7 +407,7 @@ background-color: hsl(var(--clr-brown)/90%);
     align-items: center;
     gap: clamp(0.5rem, 2vw, 2rem);
     overflow: hidden;
-    transition-delay: 0.3s;
+    /* transition-delay: 0.3s; */
     z-index: 3;
 }
 .slides-wrapper[data-slide='1']{
@@ -989,6 +989,11 @@ background-color: hsl(var(--clr-brown)/90%);
         /* background-color: hsl(var(--clr-pink)); */
         overflow: hidden;
     }
+    .circles li:nth-child(9), 
+    .circles li:nth-child(7),
+    .circles li:nth-child(3){
+        display: none;
+    }
 }
   @media (min-width: 45em) {
     :root {
@@ -1220,14 +1225,14 @@ background-color: hsl(var(--clr-brown)/90%);
     left: 10%;
     width: var(--logo-float-size);
     aspect-ratio:1;
-    animation-delay: 18s;
+    animation-delay: 32s;
     animation-duration: 100s;
 }
 .circles li:nth-child(3){
     left: 70%;
     width: calc(var(--logo-float-size)*1.5);
     aspect-ratio:1;
-    animation-delay: 12s;
+    animation-delay: 70s;
 }
 .circles li:nth-child(4){
     left: 40%;
@@ -1246,13 +1251,13 @@ background-color: hsl(var(--clr-brown)/90%);
     left: 75%;
     width: calc(var(--logo-float-size)*2.7);
     aspect-ratio:1;
-    animation-delay: 5s;
+    animation-delay: 7s;
 }
 .circles li:nth-child(7){
     left: 35%;
     width: calc(var(--logo-float-size)*3.5);
     aspect-ratio:1;
-    animation-delay: 34s;
+    animation-delay: 54s;
 }
 .circles li:nth-child(8){
     left: 50%;
@@ -1272,7 +1277,7 @@ background-color: hsl(var(--clr-brown)/90%);
     left: 85%;
     width: 150px;
     aspect-ratio:1;
-    animation-delay: 0s;
+    animation-delay: 40s;
     animation-duration: 135s;
 }
 .circles li{
