@@ -36,13 +36,14 @@
 
     /* dark mode palette */
     /* --clr-brown: 302 69% 9%;  */
-    --clr-burgundy: 304 75% 7%;
-    --clr-brown: 216 70% 15%;
+    --clr-burgundy: 304 95% 7%;
+    --clr-brown: 216 90% 18%;
     --clr-nav-text: 240 0% 95%;
     --clr-white: 240 0% 95%;
-    --clr-orange: 343 61% 52%;
+    --clr-orange: 343 67% 58%;
     --clr-pink: 345 100% 66%;
     --clr-ds: 260 80% 10%;
+    --clr-ds-border:343 67% 58%; 
     --clr-scr-bg: 340 0% 14%; 
 
     /*white mode */
@@ -82,11 +83,12 @@
     --clr-orange: 345 70% 64%;
     --clr-pink: 343 61% 52%;
     --clr-ds: 311 45% 69%;
+    --clr-ds-border:343 40% 30%; 
     --fw-normal: 600;
 }
 .light-pink-filters{
     /* filter: invert(59%) sepia(21%) saturate(1098%) hue-rotate(293deg) brightness(92%) contrast(85%); */
-    filter: invert(72%) sepia(48%) saturate(2713%) hue-rotate(298deg) brightness(110%) contrast(93%);  
+    filter: invert(72%) sepia(48%) saturate(2813%) hue-rotate(298deg) brightness(95%) contrast(100%);  
 }
 .white-filters{
     filter: invert(99%) sepia(15%) saturate(83%) hue-rotate(235deg) brightness(112%) contrast(90%);
@@ -387,7 +389,7 @@ background-color: hsl(var(--clr-brown)/90%);
 .top-ds,.bottom-ds{
     background-color: hsl(var(--clr-ds));
     width: 100%;
-    border: 2px hsl(var(--clr-orange)) solid;
+    border: 2px hsl(var(--clr-ds-border)) solid;
     padding: 1rem;
 }
 .top-ds{
@@ -402,7 +404,7 @@ background-color: hsl(var(--clr-brown)/90%);
     height: 2rem;
     border-radius: 10px;
     background-color: hsl(var(--clr-ds)/80%);
-    border: 1px hsl(var(--clr-orange)) solid;
+    border: 1px hsl(var(--clr-ds-border)) solid;
     margin:auto;
     /* transition-delay: 0.25s; */
     z-index: 2;
