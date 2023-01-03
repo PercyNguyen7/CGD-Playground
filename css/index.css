@@ -261,7 +261,8 @@ p{
 .b-button-ds,
 .y-button-ds,
 .a-button-ds{
-border: 2px solid hsl(var(--clr-orange));
+    color: hsl(var(--clr-ds-border));
+border: 2px solid hsl(var(--clr-ds-border));
 box-shadow: 5px 5px 0px rgb(0, 0, 0,0.3);
 transition: all 0.2s ease-in-out;
 background-color: hsl(var(--clr-brown)/90%);
@@ -336,7 +337,7 @@ background-color: hsl(var(--clr-brown)/90%);
     aspect-ratio: 16/9;
     overflow: hidden;
     margin: auto;
-    border: 2px hsl(var(--clr-orange)) solid;
+
     background-color: black;
   }
   .screen-2{
@@ -344,12 +345,13 @@ background-color: hsl(var(--clr-brown)/90%);
     height: 100%; 
     overflow-x: hidden;
     /* margin: auto; */
-    border: 2px hsl(var(--clr-orange)) solid;
+  
     transition: background-color 1s;
   }
 
   .screen-1,.screen-2{
     width: 100%;
+    border: 2px hsl(var(--clr-ds-border)) solid;
   }
   .slides-wrapper{
     /* position:relative; */
