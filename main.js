@@ -23,7 +23,6 @@ let slidesWrapper = document.getElementById('slides-wrapper');
 let slideIndicators = document.getElementsByClassName('slide-indicators');
 let imgWrappers = document.getElementsByClassName('img-wrappers');
 
-
 galleryCloseBtn.addEventListener('click', () => {
    galleryZoomSect.classList.add('hidden');
    for (let i = 0; i < activeImgWrapper.length; i++){
@@ -245,6 +244,7 @@ animatedHeadings.forEach((heading)=>{
         {   
           transform: ['translateX(100px)', 'translateX(0px)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
+          opacity: ['0.3','1']
         },
         {
             duration: 1,
@@ -290,8 +290,12 @@ scrollTracker.animate(
         }),
     }
 )
-
-dsRotate.animate(
+const mediaQuery = window.matchMedia('(min-width: 45em)')
+// Check if the media query is true
+if (mediaQuery.matches) {
+    console.log('min 45em');
+  // Then trigger an alert
+  dsRotate.animate(
     {
      transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(40deg) rotateY(0deg)"] ,
     //   opacity:['0','1'] 
@@ -312,7 +316,9 @@ dsRotate.animate(
             //    ],
         })
     }
-);
+ );
+}
+
 
 
 
@@ -483,8 +489,12 @@ const modeBtn = document.querySelector("#mode-btn");
 
 if (lightMode === "enabled"){
     console.log('let there be light')
-    modeBtn.classList.add("light-active");
+    toggleLightMode(); 
     enableLightMode();
+}
+else{
+    disableLightMode();
+    toggleDarkMode();
 }
 
 lightModeToggle.addEventListener('click', ()=>{
@@ -510,10 +520,21 @@ lightModeToggle.addEventListener('click', ()=>{
         
         enableLightMode();
         console.log('click');
-        modeBtn.classList.add("light-active");
+        toggleLightMode()
     } else{
         disableLightMode();
-        modeBtn.classList.remove("light-active");
+        toggleDarkMode();
     }
 });
 
+function toggleLightMode(){
+    socialsMenu.classList.add('dark-pink-filters');
+    socialsMenu.classList.remove('white-filters');
+    modeBtn.classList.add("light-active");
+}
+
+function toggleDarkMode(){
+    socialsMenu.classList.remove('dark-pink-filters');
+    socialsMenu.classList.add('white-filters');
+    modeBtn.classList.remove("light-active");
+}
