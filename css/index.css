@@ -15,6 +15,7 @@
 }
   :root {
     /* colors */
+    --logo-float-size: 0.8rem;
   
     --clr-white-const: 357 35% 95%;
     /* Orange/Burgundy Colors  */
@@ -429,7 +430,7 @@ background-color: hsl(var(--clr-brown)/90%);
   }
 
   .control-panel{
-    background-color: hsl(var(--clr-white));
+    background-color: hsl(var(--clr-white-const));
     width: 6rem;
     height: 2.25rem;
     border-radius: 50px;
@@ -991,6 +992,7 @@ background-color: hsl(var(--clr-brown)/90%);
 }
   @media (min-width: 45em) {
     :root {
+        --logo-float-size: 3rem;
         --fs-nav:1.25rem;
         --fs-h1: 3rem;
         --fs-h2:2.5rem;
@@ -1201,8 +1203,8 @@ background-color: hsl(var(--clr-brown)/90%);
     position: absolute;
     display: block;
     list-style: none;
-    width: 20px;
-    height: 20px;
+    /* width: var(--logo-float-size);
+    height: var(--logo-float-size); */
     /* background: rgba(255, 255, 255, 0.2); */
     background-color: hsl(var(--clr-burgundy)/0.5);
     animation: float-top 150s linear infinite;
@@ -1210,66 +1212,66 @@ background-color: hsl(var(--clr-brown)/90%);
 }
 .circles li:nth-child(1){
     left: 25%;
-    width: 80px;
-    height: 80px;
+    width: calc(var(--logo-float-size)*3);
+    aspect-ratio:1;
     animation-delay: 0s;
 }
 .circles li:nth-child(2){
     left: 10%;
-    width: 30px;
-    height: 30px;
+    width: var(--logo-float-size);
+    aspect-ratio:1;
     animation-delay: 18s;
     animation-duration: 100s;
 }
 .circles li:nth-child(3){
     left: 70%;
-    width: 30px;
-    height: 30px;
+    width: calc(var(--logo-float-size)*1.5);
+    aspect-ratio:1;
     animation-delay: 12s;
 }
 .circles li:nth-child(4){
     left: 40%;
-    width: 60px;
-    height: 60px;
+    width: calc(var(--logo-float-size)*2);
+    aspect-ratio:1;
     animation-delay: 10s;
     animation-duration: 120s;
 }
 .circles li:nth-child(5){
     left: 65%;
-    width: 20px;
-    height: 20px;
+    width: calc(var(--logo-float-size)*0.7);
+    aspect-ratio:1;
     animation-delay: 27s;
 }
 .circles li:nth-child(6){
     left: 75%;
-    width: 60px;
-    height: 60px;
+    width: calc(var(--logo-float-size)*2.7);
+    aspect-ratio:1;
     animation-delay: 5s;
 }
 .circles li:nth-child(7){
     left: 35%;
-    width: 150px;
-    height: 150px;
+    width: calc(var(--logo-float-size)*3.5);
+    aspect-ratio:1;
     animation-delay: 34s;
 }
 .circles li:nth-child(8){
     left: 50%;
-    width: 25px;
-    height: 25px;
+    width: calc(var(--logo-float-size)*3);
+    aspect-ratio:1;
     animation-delay: 15s;
     animation-duration: 105s;
 }
 .circles li:nth-child(9){
     left: 20%;
-    width: 20px;
-    height: 20px;
+    width: calc(var(--logo-float-size)*4);
+    aspect-ratio:1;
     animation-delay: 50s;
     animation-duration: 135s;
 }
 .circles li:nth-child(10){
     left: 85%;
     width: 150px;
-    height: 150px;
+    aspect-ratio:1;
     animation-delay: 0s;
     animation-duration: 135s;
 }
