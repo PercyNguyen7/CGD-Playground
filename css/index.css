@@ -74,14 +74,29 @@
     --ff-sans-normal: "Barlow", sans-serif; */
 }
 .light-mode{
-    --clr-burgundy: 0 65% 85%;
-    --clr-brown: 345 100% 98%;
-    --clr-nav-text: 343 70% 17%;
-    --clr-white: 343 70% 20%;
+    --clr-burgundy: 281 34% 62%;
+    --clr-brown: 311 45% 93%;
+    /* --clr-nav-text: 343 70% 17%; */
+    --clr-nav-text: 240 0% 95%;
+    --clr-white: 300 30% 20%;
     --clr-orange: 345 70% 64%;
-    --clr-pink: 345 100% 66%;
-    --clr-ds: 355 65% 75%;
+    --clr-pink: 343 61% 52%;
+    --clr-ds: 311 45% 69%;
     --fw-normal: 600;
+}
+.light-pink-filters{
+    /* filter: invert(59%) sepia(21%) saturate(1098%) hue-rotate(293deg) brightness(92%) contrast(85%); */
+    filter: invert(72%) sepia(48%) saturate(2713%) hue-rotate(298deg) brightness(110%) contrast(93%);  
+}
+.white-filters{
+    filter: invert(99%) sepia(15%) saturate(83%) hue-rotate(235deg) brightness(112%) contrast(90%);
+}
+
+.dark-pink-filters{
+    filter: invert(32%) sepia(20%) saturate(1634%) hue-rotate(292deg) brightness(93%) contrast(93%);
+}
+.orange-filters{
+    filter: invert(61%) sepia(91%) saturate(182%) hue-rotate(320deg) brightness(94%) contrast(94%);
 }
   .white-const{color:hsl( var(--clr-white-const));}
   .nav-text{color: hsl( var(--clr-nav-text));
@@ -560,17 +575,7 @@ background-color: hsl(var(--clr-brown)/90%);
     aspect-ratio: 1;
     background-size: contain;
 }
-.light-pink-filters{
-    /* filter: invert(59%) sepia(21%) saturate(1098%) hue-rotate(293deg) brightness(92%) contrast(85%); */
-    filter: invert(72%) sepia(48%) saturate(2713%) hue-rotate(298deg) brightness(87%) contrast(93%);  
-}
-.white-filters{
-    filter: invert(99%) sepia(15%) saturate(83%) hue-rotate(235deg) brightness(112%) contrast(90%);
-}
 
-.dark-pink-filters{
-    filter: invert(32%) sepia(20%) saturate(1634%) hue-rotate(292deg) brightness(93%) contrast(93%);
-}
 .nav-social-icons{
     width: 1.5rem;
     aspect-ratio: 1;

@@ -528,19 +528,19 @@ lightModeToggle.addEventListener('click', ()=>{
 });
 
 function toggleLightMode(){
-    socialsMenu.classList.add('dark-pink-filters');
-
-    socialsMenu.classList.remove('white-filters');
-    modeIconWrapper.classList.add("dark-pink-filters");
-    modeIconWrapper.classList.remove("white-filters");
+    // socialsMenu.classList.remove('white-filters');
+    // socialsMenu.classList.add('light-pink-filters');
+    socialsMenu.classList.add('white-filters');
+    // modeIconWrapper.classList.add("light-pink-filters");
+    // modeIconWrapper.classList.remove("white-filters");
     modeBtn.classList.add("light-active");
     
 }
 
 function toggleDarkMode(){
-    socialsMenu.classList.remove('dark-pink-filters');
+    // socialsMenu.classList.remove('light-pink-filters');
     socialsMenu.classList.add('white-filters');
-    modeIconWrapper.classList.remove("dark-pink-filters");
-    modeIconWrapper.classList.add("white-filters");
+    // modeIconWrapper.classList.remove("light-pink-filters");
+    // modeIconWrapper.classList.add("white-filters");
     modeBtn.classList.remove("light-active");
 }
