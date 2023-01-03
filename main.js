@@ -242,7 +242,7 @@ animatedHeadings.forEach((heading)=>{
 
     heading.animate(
         {   
-          transform: ['translateX(0px)', 'translateX(0px)'], 
+          transform: ['translateX(60px)', 'translateX(0px)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
           opacity: ['0.3','1']
         },
