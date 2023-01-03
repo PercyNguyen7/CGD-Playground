@@ -473,7 +473,7 @@ noCursorElements.forEach((noCursorElements) => {
 let lightMode = localStorage.getItem('lightMode');
 let currentMode = 0;
 const lightModeToggle = document.querySelector("#light-mode-toggle");
-
+const modeIconWrapper = document.querySelector('.mode-icon-wrapper');
 const enableLightMode = ()=>{
     document.body.classList.add('light-mode');
     localStorage.setItem('lightMode','enabled');
@@ -529,12 +529,18 @@ lightModeToggle.addEventListener('click', ()=>{
 
 function toggleLightMode(){
     socialsMenu.classList.add('dark-pink-filters');
+
     socialsMenu.classList.remove('white-filters');
+    modeIconWrapper.classList.add("dark-pink-filters");
+    modeIconWrapper.classList.remove("white-filters");
     modeBtn.classList.add("light-active");
+    
 }
 
 function toggleDarkMode(){
     socialsMenu.classList.remove('dark-pink-filters');
     socialsMenu.classList.add('white-filters');
+    modeIconWrapper.classList.remove("dark-pink-filters");
+    modeIconWrapper.classList.add("white-filters");
     modeBtn.classList.remove("light-active");
 }
