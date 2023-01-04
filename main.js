@@ -289,7 +289,7 @@ scrollTracker.animate(
 )
 skyBG.animate(
     {   
-      transform: ['translate(0%,0%)', 'translate(5%,10%)']
+      transform: ['translate(0%,0%)', 'translate(5%,20%)']
     },
     {
         duration: 1,
@@ -527,6 +527,7 @@ function toggleLightMode(){
     // modeIconWrapper.classList.add("light-pink-filters");
     // modeIconWrapper.classList.remove("white-filters");
     modeBtn.classList.add("light-active");
+    skyBG.setAttribute('data-light',true);
     
 }
 
@@ -536,4 +537,6 @@ function toggleDarkMode(){
     // modeIconWrapper.classList.remove("light-pink-filters");
     // modeIconWrapper.classList.add("white-filters");
     modeBtn.classList.remove("light-active");
+    skyBG.setAttribute('data-light',false);
+
 }

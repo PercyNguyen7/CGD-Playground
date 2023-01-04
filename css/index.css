@@ -194,12 +194,17 @@ p{
 }
 .sky-bg{
     position: fixed;
-    top: 0;
+    top: -10%;
     right: 0;
     width: 150%;
-    height: 150%;
+    height: 100%;
     z-index: -2000;
-    background: url(../assets/images/bg-flag.png) center center  repeat;
+}
+.sky-bg[data-light='true']{
+    background: url(../assets/images/bg-leaf.png) center center  repeat;
+}
+.sky-bg[data-light='false']{
+    background: url(../assets/images/bg-stars.png) center center  repeat;
 }
 .primary-navigation{
     /* transition-delay: 0.05s; */
