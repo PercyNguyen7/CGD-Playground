@@ -37,7 +37,7 @@
     /* dark mode palette */
     /* --clr-brown: 302 69% 9%;  */
     --clr-burgundy: 304 95% 7%;
-    --clr-brown: 216 90% 18%;
+    --clr-brown: 216 95% 10%;
     --clr-nav-text: 240 0% 95%;
     --clr-white: 240 0% 95%;
     --clr-orange: 343 67% 58%;
@@ -195,10 +195,10 @@ p{
 .sky-bg{
     position: fixed;
     top: -10%;
-    right: 0;
+    right: -10%;
     width: 150%;
-    height: 100%;
-    z-index: -2000;
+    height: 150%;
+    z-index: -5000;
 }
 .sky-bg[data-light='true']{
     background: url(../assets/images/bg-leaf.png) center center  repeat;
@@ -220,7 +220,7 @@ p{
 
 #spotlight-sect{
   margin-top:3rem;
-  /* background-color: hsl(var(--clr-brown) /60%); */
+  background-color: hsl(var(--clr-brown) /70%);
   width: 100%;
   text-align: center;
   /* height: 10rem; */
@@ -670,7 +670,7 @@ background-color: hsl(var(--clr-brown)/90%);
     transform: rotate(-45deg) translate(35px, 35px);
   }
   #gallery-sect{
-    max-width: 60rem;
+    max-width: 80rem;
     margin: 3rem auto 10rem;
     padding: 1rem;
 }
@@ -682,7 +682,7 @@ background-color: hsl(var(--clr-brown)/90%);
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     grid-auto-rows: 250px;
     grid-auto-flow: dense;
-    background-color: hsl( var(--clr-burgundy)/50%);
+    /* background-color: hsl( var(--clr-burgundy)/50%); */
 }
 
 .gallery figure{
@@ -864,7 +864,7 @@ background-color: hsl(var(--clr-brown)/90%);
     }
   }
     @media (max-width:34.99em){
-        .v-stretch{
+        /* .v-stretch{
             grid-row:span 1;
         }
         .w-stretch{
@@ -873,7 +873,7 @@ background-color: hsl(var(--clr-brown)/90%);
         .big-stretch{
             grid-column:span 1;
             grid-row:span 1;
-        }
+        } */
     }
     @media (min-width:35em){
         .v-stretch{
@@ -888,6 +888,20 @@ background-color: hsl(var(--clr-brown)/90%);
         }
     }
   @media (max-width: 44.99em) {
+    .gallery{
+        grid-template-columns: repeat(2,1fr);
+        /* grid-auto-rows: 250px; */
+    }
+    .v-stretch{
+        grid-row:span 2;
+    }
+    .w-stretch{
+        grid-column:span 2;
+    }
+    .big-stretch{
+        grid-column:span 2;
+        grid-row:span 2;
+    }
     .primary-navigation{
         background-color: hsl(var(--clr-burgundy));
         position: fixed;
@@ -1008,7 +1022,7 @@ background-color: hsl(var(--clr-brown)/90%);
   @media (min-width: 45em) {
     :root {
         --logo-float-size: 3rem;
-        --fs-nav:1.25rem;
+        --fs-nav:1.1rem;
         --fs-h1: 3rem;
         --fs-h2:2.5rem;
         --big-icon-size:clamp(6rem,8vw,9rem);
@@ -1080,7 +1094,7 @@ background-color: hsl(var(--clr-brown)/90%);
         background-color: black; */ 
     }
     .past-events-content-wrapper{
-        max-width: 62rem;
+        max-width: 60rem;
         margin: auto;
     }
     .top-ds,.bottom-ds{
@@ -1172,9 +1186,16 @@ background-color: hsl(var(--clr-brown)/90%);
 
 @media (min-width: 55em) {
     :root {
-        --fs-nav:1.25rem;
+        /* --fs-nav:1.25rem; */
         --fs-h1: 4rem;
         --fs-h2:3rem;
+    }
+}
+@media (min-width: 65em) {
+    :root {
+        /* --fs-nav:1.25rem; */
+        --fs-h1: 4.5rem;
+        --fs-h2:4rem;
     }
 }
 @media (min-width: 100em){
@@ -1208,10 +1229,10 @@ background-color: hsl(var(--clr-brown)/90%);
         background-color: hsl(var(--clr-brown)/70%);
         backdrop-filter: blur(0.5rem);
     }
-    .gallery{
+    /* .gallery{
         background-color: hsl(var(--clr-burgundy)/ 40%);
         backdrop-filter: blur(0.5rem);
-    }
+    } */
 }
 .circles-area{
     position:relative;
@@ -1288,7 +1309,7 @@ background-color: hsl(var(--clr-brown)/90%);
     animation-delay: 54s;
 }
 .circles li:nth-child(8){
-    left: 85%;
+    left:90%;
     width: calc(var(--logo-float-size)*1.9);
     aspect-ratio:1;
     animation-delay: 15s;
@@ -1317,14 +1338,14 @@ background-color: hsl(var(--clr-brown)/90%);
 
 @keyframes float-top {
     0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.6;
+        transform: translate(0,0) rotate(0deg);
+        opacity: 0.7;
         border-radius: 25%;
     }
 
     100%{
-        transform: translateY(-600vh) rotate(1080deg);
-        opacity: 0.1;
+        transform: translate(0,-600vh)  rotate(1080deg);
+        opacity: 0.3;
         border-radius: 25%;
     }
 

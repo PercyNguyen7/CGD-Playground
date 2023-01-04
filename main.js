@@ -289,7 +289,8 @@ scrollTracker.animate(
 )
 skyBG.animate(
     {   
-      transform: ['translate(0%,0%)', 'translate(5%,20%)']
+      transform: ['translate(0%,0%)', 'translate(10%,10%)'],
+      opacity: ['1','0.6']
     },
     {
         duration: 1,
