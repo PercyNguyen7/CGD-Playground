@@ -242,7 +242,7 @@ animatedHeadings.forEach((heading)=>{
 
     heading.animate(
         {   
-          transform: ['translateX(60px)', 'translateX(0px)'], 
+          transform: ['translateX(40px)', 'translateX(0px)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
           opacity: ['0.3','1']
         },
@@ -323,7 +323,7 @@ if (mediaQuery.matches) {
 
 
 function slideLeftImg(){
-    console.log(dsRotateOffsetTop,dsRotaterHeight);
+    console.log(dsRotateOffsetTop,dsRotateHeight);
     // if middle is current Img
         if(img2.classList.contains("current-img")){
             img2.classList.remove('current-img');
@@ -484,7 +484,7 @@ const disableLightMode = ()=>{
     localStorage.removeItem('lightMode',null);
 };
 
-const modeBtn = document.querySelector("#mode-btn");
+const modeBtn = document.querySelector("#mode-indicator");
 
 
 if (lightMode === "enabled"){
