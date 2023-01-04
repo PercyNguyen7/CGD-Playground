@@ -164,10 +164,12 @@ text-transform: uppercase;} */
 
   .ff-para{font-family: 'CorbertReg',sans-serif;}
   .ff-title{font-family: 'LeagueSpartan',sans-serif;}
+  html,body{
+    cursor:none;
+  }
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
-    cursor:none;
     /* min-height: 120vh; */
   }
   header{
@@ -177,7 +179,7 @@ text-transform: uppercase;} */
    text-transform: uppercase;
    margin:1rem 0;
     }
-    h2{
+  h2{
         font-size: var(--fs-h2);
         text-transform: uppercase;
         margin:1rem 0 0.5rem 0;
@@ -189,6 +191,15 @@ text-transform: uppercase;} */
     }
 p{
     font-size:1rem;
+}
+.sky-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150%;
+    height: 150%;
+    z-index: -2000;
+    background: url(../assets/images/bg-flag.png) center center  repeat;
 }
 .primary-navigation{
     /* transition-delay: 0.05s; */
@@ -204,7 +215,7 @@ p{
 
 #spotlight-sect{
   margin-top:3rem;
-  background-color: hsl(var(--clr-brown) /60%);
+  /* background-color: hsl(var(--clr-brown) /60%); */
   width: 100%;
   text-align: center;
   /* height: 10rem; */
@@ -519,7 +530,7 @@ background-color: hsl(var(--clr-brown)/90%);
     width: 0%;
     height: 1px;
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -1186,7 +1197,7 @@ background-color: hsl(var(--clr-brown)/90%);
     }
     #spotlight-sect{
         background-color: hsl(var(--clr-brown)/ 50%);
-        backdrop-filter: blur(0.5rem);
+        backdrop-filter: blur(1rem);
     }
     .past-events-wrappers{
         background-color: hsl(var(--clr-brown)/70%);
@@ -1205,7 +1216,7 @@ background-color: hsl(var(--clr-brown)/90%);
 }
 .circles{
     position:absolute;
-    bottom: -0;
+    bottom: 0;
     left: 0;
     width: 100%;
     /* min-height: 500vh; */
@@ -1225,7 +1236,7 @@ background-color: hsl(var(--clr-brown)/90%);
     /* background: rgba(255, 255, 255, 0.2); */
     background-color: hsl(var(--clr-burgundy)/0.5);
     animation: float-top 150s linear infinite;
-    bottom: -300px; 
+    bottom: -200px; 
 }
 .circles li:nth-child(1){
     left: 25%;
@@ -1267,13 +1278,13 @@ background-color: hsl(var(--clr-brown)/90%);
 }
 .circles li:nth-child(7){
     left: 35%;
-    width: calc(var(--logo-float-size)*3.2);
+    width: calc(var(--logo-float-size)*3.3);
     aspect-ratio:1;
     animation-delay: 54s;
 }
 .circles li:nth-child(8){
     left: 85%;
-    width: calc(var(--logo-float-size)*2.4);
+    width: calc(var(--logo-float-size)*1.9);
     aspect-ratio:1;
     animation-delay: 15s;
     animation-duration: 105s;

@@ -228,7 +228,7 @@ function slideRightImg(){
     // imgNext.clas
 }
 const scrollTracker = document.querySelector('.scroll-tracker');
-
+const skyBG = document.querySelector('#sky-bg');
 const dsRotate = document.querySelector(".ds-3d-rotate");
 const animatedHeadings = document.querySelectorAll(".slide-lr-scroll");
 const dsRotateOffsetTop = dsRotate.offsetTop;
@@ -237,9 +237,6 @@ const dsRotateHeight = dsRotate.offsetHeight;
 animatedHeadings.forEach((heading)=>{
     const headingOffsetTop = heading.offsetTop;
     const headingOffsetHeight = heading.offsetHeight;
-
-
-
     heading.animate(
         {   
           transform: ['translateX(40px)', 'translateX(0px)'], 
@@ -290,6 +287,17 @@ scrollTracker.animate(
         }),
     }
 )
+skyBG.animate(
+    {   
+      transform: ['translate(0%,0%)', 'translate(5%,10%)']
+    },
+    {
+        duration: 1,
+        timeline: new ScrollTimeline({
+            scrollOffsets: [CSS.percent(0), CSS.percent(105)],
+        }),
+    }
+)
 const mediaQuery = window.matchMedia('(min-width: 45em)')
 // Check if the media query is true
 if (mediaQuery.matches) {
@@ -318,6 +326,7 @@ if (mediaQuery.matches) {
     }
  );
 }
+
 
 
 
@@ -500,22 +509,6 @@ else{
 lightModeToggle.addEventListener('click', ()=>{
 
     console.log(lightMode);
-    // if (currentMode ==0){
-    //     currentMode++;
-    //     modeBtn.classList.remove("light-active");
-    //     enableLightMode();
-    // }
-    // else if (currentMode ==1){
-    //     currentMode++;
-    //     disableLightMode();
-    // modeBtn.classList.add("light-active");
-    // }
-
-    // if (currentMode >1){
-     
-    //     currentMode = 0;
-    // }
-    // console.log(currentMode);
     if (localStorage.getItem('lightMode') === null){
         
         enableLightMode();
