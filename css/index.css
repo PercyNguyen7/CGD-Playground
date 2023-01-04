@@ -890,6 +890,7 @@ background-color: hsl(var(--clr-brown)/90%);
   @media (max-width: 44.99em) {
     .gallery{
         grid-template-columns: repeat(2,1fr);
+        
         /* grid-auto-rows: 250px; */
     }
     .v-stretch{
@@ -1181,6 +1182,9 @@ background-color: hsl(var(--clr-brown)/90%);
         aspect-ratio: 16/9;
         /* background-color: hsl(var(--clr-pink)); */
         overflow: hidden;
+    }
+    .gallery{
+        grid-gap: 1rem;
     }
 }
 
