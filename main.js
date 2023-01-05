@@ -239,7 +239,7 @@ animatedHeadings.forEach((heading)=>{
     const headingOffsetHeight = heading.offsetHeight;
     heading.animate(
         {   
-          transform: ['translateX(40px)', 'translateX(0px)'], 
+          transform: ['translateX(100px)', 'translateX(0px)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
           opacity: ['0.3','1']
         },
@@ -248,7 +248,7 @@ animatedHeadings.forEach((heading)=>{
             easing: 'linear',
             timeline: new ScrollTimeline({
                 scrollOffsets:[
-                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight),
+                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight -100),
                             CSS.px(headingOffsetTop -300),
                         ],
             }),
@@ -306,8 +306,8 @@ if (mediaQuery.matches) {
   // Then trigger an alert
   dsRotate.animate(
     {
-     transform: ["perspective(1000px) rotateX(0deg) rotateY(0deg)","perspective(1000px) rotateX(40deg) rotateY(0deg)"] ,
-    //   opacity:['0','1'] 
+     transform: ["perspective(1000px) rotateX(-40deg) rotateY(10deg) translateY(0px) scale(0.5)","perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)"] ,
+    //   opacity:['0.4','1'] 
     },
     {
         duration:1,
@@ -315,8 +315,8 @@ if (mediaQuery.matches) {
         // timeline: dsRotateTimeline,
         timeline: new ScrollTimeline({
             scrollOffsets:[
-                CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight -200),
-               CSS.px(dsRotateOffsetTop + 1000),
+                CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight-200),
+               CSS.px(dsRotateOffsetTop -120),
            ],
           
             // scrollOffsets:[

@@ -119,7 +119,7 @@ text-transform: uppercase;}
   .fs-h3{font-size: var(--fs-h3);
 text-transform: uppercase;} */
   .light-mode-toggle{
-    position: absolute;
+    position: fixed;
     padding: 3px;
     width: 3rem;
     aspect-ratio: 1/2;
@@ -166,6 +166,7 @@ text-transform: uppercase;} */
   .ff-title{font-family: 'LeagueSpartan',sans-serif;}
   html,body{
     cursor:none;
+    scroll-behavior: smooth;
   }
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
@@ -177,12 +178,13 @@ text-transform: uppercase;} */
   }
   h1{font-size: var(--fs-h1);
    text-transform: uppercase;
-   margin:1rem 0;
+   margin:2rem 0;
     }
   h2{
         font-size: var(--fs-h2);
         text-transform: uppercase;
         margin:1rem 0 0.5rem 0;
+        width: fit-content;
      }
     h3{
     font-size: var(--fs-h3);
@@ -224,8 +226,9 @@ p{
   width: 100%;
   text-align: center;
   /* height: 10rem; */
-  padding: 3rem 0rem;
+  padding: 4rem 0rem 3rem;
   overflow-x: hidden;
+  /* border-bottom: hsl(var(--clr-ds-border)) 1px solid; */
   /* transition-delay: 0.1s; */
 }
 #page-heading{
@@ -605,13 +608,15 @@ background-color: hsl(var(--clr-brown)/90%);
     width: 0.75rem;
     aspect-ratio: 2/1;
 }
-.gamepad-icon{
-    background: url(../assets/images/icons/gamepad-icon.svg) center center / cover no-repeat;
-}
+
 .big-icons{
     width: var(--big-icon-size);
     aspect-ratio: 1;
     margin: auto;
+    border-radius: 3px rgb(99, 62, 68) solid;
+}
+.gamepad-icon{
+    background: url(../assets/images/icons/gamepad-icon.svg) center center / cover no-repeat;
 }
   /* burger code from https://www.youtube.com/watch?v=dIyVTjJAkLw */
   .menu-btn {
@@ -824,8 +829,8 @@ background-color: hsl(var(--clr-brown)/90%);
     .inner-cursor.grow{
         /* top:-50px;
         left:-50px; */
-        width:100px;
-        height:100px;
+        width:80px;
+        height:80px;
         mix-blend-mode:difference;
         /* opacity: 1; */
         background-color: hsl( var(--clr-pink) );
@@ -1026,7 +1031,7 @@ background-color: hsl(var(--clr-brown)/90%);
         --fs-nav:1.1rem;
         --fs-h1: 3rem;
         --fs-h2:2.5rem;
-        --big-icon-size:clamp(6rem,8vw,9rem);
+        --big-icon-size:clamp(6rem,8vw,7rem);
     }
     .light-mode-toggle{
         top: 5rem;
@@ -1052,7 +1057,7 @@ background-color: hsl(var(--clr-brown)/90%);
         background-color: hsl(var(--clr-burgundy)/ 70%);
     }
     #spotlight-sect{
-        padding:3rem 0rem 12rem 0;
+        padding:7rem 0rem 12rem 0;
     }
   
     .tabs-menu{
@@ -1298,13 +1303,13 @@ background-color: hsl(var(--clr-brown)/90%);
     left: 60%;
     width: calc(var(--logo-float-size)*0.7);
     aspect-ratio:1;
-    animation-delay: 27s;
+    animation-delay: 57s;
 }
 .circles li:nth-child(6){
     left: 75%;
     width: calc(var(--logo-float-size)*2.7);
     aspect-ratio:1;
-    animation-delay: 7s;
+    animation-delay: 15s;
 }
 .circles li:nth-child(7){
     left: 35%;
@@ -1316,7 +1321,7 @@ background-color: hsl(var(--clr-brown)/90%);
     left:90%;
     width: calc(var(--logo-float-size)*1.9);
     aspect-ratio:1;
-    animation-delay: 15s;
+    animation-delay: 24s;
     animation-duration: 105s;
 }
 .circles li:nth-child(9){
