@@ -249,7 +249,7 @@ animatedHeadings.forEach((heading)=>{
             timeline: new ScrollTimeline({
                 scrollOffsets:[
                             CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight -100),
-                            CSS.px(headingOffsetTop -300),
+                            CSS.px(headingOffsetTop -550),
                         ],
             }),
         }
@@ -437,25 +437,25 @@ window.addEventListener("load", ()=>{
 //     }
 });
 
-let innerCursor = document.querySelector('.inner-cursor');
-let outerCursor = document.querySelector('.outer-cursor');
+// let innerCursor = document.querySelector('.inner-cursor');
+// let outerCursor = document.querySelector('.outer-cursor');
 
-document.addEventListener('mousemove',moveCursor);
+// document.addEventListener('mousemove',moveCursor);
 
-function moveCursor(e){
-    let x = e.clientX;
-    let y = e.clientY;
+// function moveCursor(e){
+//     let x = e.clientX;
+//     let y = e.clientY;
 
-    innerCursor.style.left =e.pageX + "px";
-    innerCursor.style.top =e.pageY + "px";
-    outerCursor.style.left =e.pageX + "px";
-    outerCursor.style.top =e.pageY + "px";
+//     innerCursor.style.left =e.pageX + "px";
+//     innerCursor.style.top =e.pageY + "px";
+//     outerCursor.style.left =e.pageX + "px";
+//     outerCursor.style.top =e.pageY + "px";
     
-    // innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
-    // outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+//     // innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+//     // outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
 
-    // console.log(x,y);
-}
+//     // console.log(x,y);
+// }
 
 // const headings = ;
 let headings = Array.from(document.querySelectorAll(".clickable"));

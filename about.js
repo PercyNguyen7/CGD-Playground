@@ -98,7 +98,7 @@ animatedMembers.forEach((image)=>{
     if (mediaLower45vw.matches){
     image.animate(
         {   
-          transform: ['translateY(0rem)', 'translateY(-10rem)'], 
+          transform: ['translateY(0rem)', 'translateY(-13rem)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
         //   opacity: ['0.6','1']
         },
@@ -108,8 +108,8 @@ animatedMembers.forEach((image)=>{
             timeline: new ScrollTimeline({
                 scrollOffsets:[
 
-                    CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight - 400),
-                    CSS.px(imgOffsetTop+300),
+                    CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-400),
+                    CSS.px(imgOffsetTop+500),
                     ],
                 // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
             }),
@@ -121,7 +121,7 @@ animatedMembers.forEach((image)=>{
         image.animate(
           
             {   
-              transform: ['translateY(0)', 'translateY(-15rem)'], 
+              transform: ['translateY(0)', 'translateY(-13rem)'], 
             //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
             //   opacity: ['0.6','1']
             },
@@ -131,8 +131,8 @@ animatedMembers.forEach((image)=>{
                 timeline: new ScrollTimeline({
                     scrollOffsets:[
     
-                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight - 400),
-                        CSS.px(imgOffsetTop+300),
+                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-200),
+                        CSS.px(imgOffsetTop+500),
                         ],
                     // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
                 }),
@@ -142,7 +142,7 @@ animatedMembers.forEach((image)=>{
     else if(mediaMore85.matches){
         image.animate(
             {   
-              transform: ['translateY(0)', 'translateY(-21rem)'], 
+              transform: ['translateY(0)', 'translateY(-14rem)'], 
             //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
             //   opacity: ['0.6','1']
             },
@@ -152,8 +152,8 @@ animatedMembers.forEach((image)=>{
                 timeline: new ScrollTimeline({
                     scrollOffsets:[
     
-                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight - 400),
-                        CSS.px(imgOffsetTop+300),
+                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-100),
+                        CSS.px(imgOffsetTop+ 500),
                         ],
                     // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
                 }),
@@ -316,25 +316,25 @@ window.addEventListener("load", ()=>{
 //     }
 });
 
-let innerCursor = document.querySelector('.inner-cursor');
-let outerCursor = document.querySelector('.outer-cursor');
+// let innerCursor = document.querySelector('.inner-cursor');
+// let outerCursor = document.querySelector('.outer-cursor');
 
-document.addEventListener('mousemove',moveCursor);
+// document.addEventListener('mousemove',moveCursor);
 
-function moveCursor(e){
-    let x = e.clientX;
-    let y = e.clientY;
+// function moveCursor(e){
+//     let x = e.clientX;
+//     let y = e.clientY;
 
-    innerCursor.style.left =e.pageX + "px";
-    innerCursor.style.top =e.pageY + "px";
-    outerCursor.style.left =e.pageX + "px";
-    outerCursor.style.top =e.pageY + "px";
+//     // innerCursor.style.left =e.pageX + "px";
+//     // innerCursor.style.top =e.pageY + "px";
+//     // outerCursor.style.left =e.pageX + "px";
+//     // outerCursor.style.top =e.pageY + "px";
     
-    // innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
-    // outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+//     innerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
+//     outerCursor.style.transform = "translate("+e.pageX+"px,"+e.pageY +"px)";
 
-    // console.log(x,y);
-}
+//     // console.log(x,y);
+// }
 
 // const headings = ;
 let headings = Array.from(document.querySelectorAll(".clickable"));
