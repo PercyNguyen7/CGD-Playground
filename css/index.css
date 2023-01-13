@@ -253,9 +253,6 @@ p{
 .past-events-wrappers:hover h3{
     text-decoration: underline;
 }
-/* .past-events-wrappers{
-    background-color: hsl(var(--clr-burgundy)/10%);
-} */
 .left-controls-ds{
     width: clamp(3rem, 10vw, 6rem);
     aspect-ratio: 1;
@@ -360,10 +357,9 @@ background-color: hsl(var(--clr-brown)/90%);
     overflow: hidden;
   } */
   .screen-1{
-    aspect-ratio: 16/9;
+    aspect-ratio: 1.2/1;
     overflow: hidden;
     margin: auto;
-
     background-color: black;
   }
   .screen-2{
@@ -399,16 +395,19 @@ background-color: hsl(var(--clr-brown)/90%);
     /* left:0; */
     /* overflow: hidden; */
 }
-
+.past-events-wrappers>figure{
+    width: 100%;
+    aspect-ratio: 1;
+}
 #spotlight-sect img,
 .past-events-wrappers>figure>img{
     width:100%;
+    aspect-ratio: 1;
     object-fit: cover;
     object-position: 50% 50%;
+    background-color: black;
 }
-.past-events-wrappers>figure>img{
-    width:100%;
-}
+
 /* .slides-wrapper:hover{
     transform: translateX(-100%);
 } */
@@ -1202,10 +1201,6 @@ footer a:hover{
     /* .top-ds{
         border-radius: 20px 20px 10px 10px ; 
     } */
-    .slides-wrapper{
- 
-        background-color: black;
-    }
      /*
     .bottom-ds{
         border-radius: 10px 10px 20px 20px ;
@@ -1222,23 +1217,15 @@ footer a:hover{
         position: relative;
         background-color: hsl(var(--clr-brown)/60%);
         backdrop-filter: blur(0.5rem);
-         /* cursor: pointer; */
         gap:1rem;
         margin: 2rem 0;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         box-shadow: 16px 16px 14px hsl( var(--clr-burgundy)/30%);
         overflow: hidden;
         z-index: 1;
         padding:1rem;
-    }
-    .past-events-wrappers>figure{
-        width:100%;
-        flex-shrink:0;
-        aspect-ratio: 16/9;
-        /* background-color: hsl(var(--clr-pink)); */
-        overflow: hidden;
     }
 
     .circles li:nth-child(9), 
@@ -1293,7 +1280,9 @@ footer a:hover{
     #spotlight-sect{
         padding:7rem 0rem 12rem 0;
     }
-  
+    #spotlight-sect img{
+        object-fit: contain;
+    }
     .tabs-menu{
         flex-direction: row;
         width: 100%;
@@ -1361,7 +1350,8 @@ footer a:hover{
         transition: all 1s ease-in-out;
     } */
     .screen-2[data-color='1']{
-        background-color: #262C6A;
+        background-color: black;
+        /* #262C6A */
       }
       .screen-2[data-color='2']{
         background-color: #372D4F;
@@ -1416,11 +1406,10 @@ footer a:hover{
         /* animation: rotate 2s linear infinite; */
     }
     .past-events-wrappers>figure{
-        width:100%;
-        max-width: 25rem;
+        width:140%;
+        /* max-width: 25rem;
         flex-shrink:0;
-        height:14rem;
-        aspect-ratio: 16/9;
+        height:14rem; */
         /* background-color: hsl(var(--clr-pink)); */
         overflow: hidden;
     }

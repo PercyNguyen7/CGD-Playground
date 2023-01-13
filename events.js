@@ -1,27 +1,27 @@
 // import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
 import'https://rawcdn.githack.com/flackr/scroll-timeline/3063e156535f3ab1ffc8a4000ffdd3290232c121/dist/scroll-timeline.js';
-let menuBtn = document.querySelector('.menu-btn');
-let galleryCloseBtn = document.getElementById('gallery-close-btn');
-let galleryRightArrow = document.getElementById('gallery-right-arrow');
-let galleryLeftArrow = document.getElementById('gallery-left-arrow');
-let galleryZoomSect = document.getElementById("gallery-zoom-sect");
-let activeImgWrapper = document.getElementsByClassName('active-img-wrapper');
-let prevImgWrapper = document.getElementsByClassName('prev-img-wrapper');
-let nextImgWrapper = document.getElementsByClassName(' next-img-wrapper');
-let currentImg = document.getElementsByClassName('current-img');
-let prevImg = document.getElementsByClassName('prev-img');
-let nextImg = document.getElementsByClassName('next-img');
+const menuBtn = document.querySelector('.menu-btn');
+const galleryCloseBtn = document.getElementById('gallery-close-btn');
+const galleryRightArrow = document.getElementById('gallery-right-arrow');
+const galleryLeftArrow = document.getElementById('gallery-left-arrow');
+const galleryZoomSect = document.getElementById("gallery-zoom-sect");
+const activeImgWrapper = document.getElementsByClassName('active-img-wrapper');
+const prevImgWrapper = document.getElementsByClassName('prev-img-wrapper');
+const nextImgWrapper = document.getElementsByClassName(' next-img-wrapper');
+const currentImg = document.getElementsByClassName('current-img');
+const prevImg = document.getElementsByClassName('prev-img');
+const nextImg = document.getElementsByClassName('next-img');
 
-let socialsMenu = document.getElementById('socials-menu');
-let tabsWrappers = document.getElementsByClassName('tabs-wrappers');
-let primaryNav = document.querySelector('.primary-navigation');
-let leftArrow = document.getElementById('left-arrow');
-let rightArrow = document.getElementById('right-arrow');
-let dsScreen2 = document.querySelector('.screen-2')
+const socialsMenu = document.getElementById('socials-menu');
+const tabsWrappers = document.getElementsByClassName('tabs-wrappers');
+const primaryNav = document.querySelector('.primary-navigation');
+const leftArrow = document.getElementById('left-arrow');
+const rightArrow = document.getElementById('right-arrow');
+const dsScreen2 = document.querySelector('.screen-2')
 let menuOpen = false;
-let slidesWrapper = document.getElementById('slides-wrapper');
-let slideIndicators = document.getElementsByClassName('slide-indicators');
-let imgWrappers = document.getElementsByClassName('img-wrappers');
+const slidesWrapper = document.getElementById('slides-wrapper');
+const slideIndicators = document.getElementsByClassName('slide-indicators');
+const imgWrappers = document.getElementsByClassName('img-wrappers');
 
 galleryCloseBtn.addEventListener('click', () => {
    galleryZoomSect.classList.add('hidden');
@@ -65,21 +65,21 @@ leftArrow.addEventListener('click', () => {
     console.log('3');
     slideIndicators[0].classList.remove('active');
     slideIndicators[2].classList.add('active');
-    dsScreen2.setAttribute('data-color',3);
+    // dsScreen2.setAttribute('data-color',3);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 2){
         slidesWrapper.setAttribute('data-slide',1);
         console.log('1');
         slideIndicators[1].classList.remove('active');
         slideIndicators[0].classList.add('active');
-        dsScreen2.setAttribute('data-color',1);
+        // dsScreen2.setAttribute('data-color',1);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 3){
         slidesWrapper.setAttribute('data-slide',2);
         console.log('2');
         slideIndicators[2].classList.remove('active');
         slideIndicators[1].classList.add('active');
-        dsScreen2.setAttribute('data-color',2);
+        // dsScreen2.setAttribute('data-color',2);
     } 
 });
 
@@ -94,21 +94,21 @@ rightArrow.addEventListener('click', () => {
     // }
     slideIndicators[0].classList.remove('active');
     slideIndicators[1].classList.add('active');
-    dsScreen2.setAttribute('data-color',2);
+    // dsScreen2.setAttribute('data-color',2);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 2){
         slidesWrapper.setAttribute('data-slide',3);
         console.log('3');
         slideIndicators[1].classList.remove('active');
         slideIndicators[2].classList.add('active');
-        dsScreen2.setAttribute('data-color',3);
+        // dsScreen2.setAttribute('data-color',3);
     } 
     else if (slidesWrapper.getAttribute("data-slide") == 3){
         slidesWrapper.setAttribute('data-slide',1);
         console.log('1');
         slideIndicators[2].classList.remove('active');
         slideIndicators[0].classList.add('active');
-        dsScreen2.setAttribute('data-color',1);
+        // dsScreen2.setAttribute('data-color',1);
     } 
 });
 
@@ -458,17 +458,17 @@ window.addEventListener("load", ()=>{
 // }
 
 // const headings = ;
-let headings = Array.from(document.querySelectorAll(".clickable"));
-headings.forEach((headings) => {
-    headings.addEventListener("mouseover",()=>{
-        innerCursor.classList.add("grow");
-        outerCursor.classList.add("grow");
-    });
-    headings.addEventListener("mouseleave",()=>{
-        innerCursor.classList.remove("grow");
-        outerCursor.classList.remove("grow");
-    });
-});
+// let headings = Array.from(document.querySelectorAll(".clickable"));
+// headings.forEach((headings) => {
+//     headings.addEventListener("mouseover",()=>{
+//         innerCursor.classList.add("grow");
+//         outerCursor.classList.add("grow");
+//     });
+//     headings.addEventListener("mouseleave",()=>{
+//         innerCursor.classList.remove("grow");
+//         outerCursor.classList.remove("grow");
+//     });
+// });
 
 let noCursorElements = Array.from(document.querySelectorAll(".no-cursor"));
 noCursorElements.forEach((noCursorElements) => {

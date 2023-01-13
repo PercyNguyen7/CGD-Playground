@@ -337,17 +337,17 @@ window.addEventListener("load", ()=>{
 // }
 
 // const headings = ;
-let headings = Array.from(document.querySelectorAll(".clickable"));
-headings.forEach((headings) => {
-    headings.addEventListener("mouseover",()=>{
-        innerCursor.classList.add("grow");
-        outerCursor.classList.add("grow");
-    });
-    headings.addEventListener("mouseleave",()=>{
-        innerCursor.classList.remove("grow");
-        outerCursor.classList.remove("grow");
-    });
-});
+// let headings = Array.from(document.querySelectorAll(".clickable"));
+// headings.forEach((headings) => {
+//     headings.addEventListener("mouseover",()=>{
+//         innerCursor.classList.add("grow");
+//         outerCursor.classList.add("grow");
+//     });
+//     headings.addEventListener("mouseleave",()=>{
+//         innerCursor.classList.remove("grow");
+//         outerCursor.classList.remove("grow");
+//     });
+// });
 
 let noCursorElements = Array.from(document.querySelectorAll(".no-cursor"));
 noCursorElements.forEach((noCursorElements) => {
