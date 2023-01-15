@@ -18,19 +18,17 @@ html,
 body {
 	margin: 0;
     box-sizing: border-box;
-    height:100%;
-	min-height: 100%;
+}
+.animation-wrapper{
+    width: 100%;
+    height:100vh;
+    min-height: 100%;
 }
 /* Box sizing */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-.mom{
-    width: 100%;
-    height:100vh;
-    background-color: red;
 }
 
 
@@ -314,7 +312,7 @@ picture {
         background-color: var(--clr-white);
     }
 } */
-@media (max-width:34.99em){
+/* @media (max-width:34.99em){
 
 }
 
@@ -335,7 +333,7 @@ picture {
         top:0rem;
         width: 100%;
         height:55%;
-        /* background-color: red; */
+
      }
      .navigation-wrapper>*{
         text-align: center;
@@ -344,7 +342,7 @@ picture {
     .navigation-wrapper>*:nth-child(1){
         text-align: left;
         display: block;
-        /* margin-bottom: clamp(2rem,20vh,16rem); */
+     
     }
     .navigation-wrapper>*:nth-child(2),.navigation-wrapper>*:nth-child(3){
         text-align: right;
@@ -381,6 +379,11 @@ picture {
         padding:clamp(0.35rem,15vw,2.5rem) clamp(0.35rem,15vw,2rem) clamp(0.35rem,15vw,0.5rem);
         width: 100%;
     }
+} */
+section{
+    width: 100%;
+    height: 50vh;
+    background-color: red;
 }
 .flex{
     display: flex;

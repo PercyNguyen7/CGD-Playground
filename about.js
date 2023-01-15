@@ -98,7 +98,7 @@ animatedMembers.forEach((image)=>{
     if (mediaLower45vw.matches){
     image.animate(
         {   
-          transform: ['translateY(0rem)', 'translateY(-13rem)'], 
+          transform: ['translateY(0rem)', 'translateY(-12rem)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
         //   opacity: ['0.6','1']
         },
@@ -109,7 +109,7 @@ animatedMembers.forEach((image)=>{
                 scrollOffsets:[
 
                     CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-400),
-                    CSS.px(imgOffsetTop+500),
+                    CSS.px(imgOffsetTop+600),
                     ],
                 // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
             }),
@@ -121,7 +121,7 @@ animatedMembers.forEach((image)=>{
         image.animate(
           
             {   
-              transform: ['translateY(0)', 'translateY(-13rem)'], 
+              transform: ['translateY(0)', 'translateY(-11rem)'], 
             //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
             //   opacity: ['0.6','1']
             },
@@ -132,7 +132,7 @@ animatedMembers.forEach((image)=>{
                     scrollOffsets:[
     
                         CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-200),
-                        CSS.px(imgOffsetTop+500),
+                        CSS.px(imgOffsetTop+600),
                         ],
                     // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
                 }),
@@ -153,7 +153,7 @@ animatedMembers.forEach((image)=>{
                     scrollOffsets:[
     
                         CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-100),
-                        CSS.px(imgOffsetTop+ 500),
+                        CSS.px(imgOffsetTop+ 600),
                         ],
                     // scrollOffsets: [CSS.percent(60), CSS.percent(80)],
                 }),
