@@ -357,7 +357,7 @@ background-color: hsl(var(--clr-brown)/90%);
     overflow: hidden;
   } */
   .screen-1{
-    aspect-ratio: 1.2/1;
+    aspect-ratio: 1;
     overflow: hidden;
     margin: auto;
     background-color: black;
@@ -378,7 +378,7 @@ background-color: hsl(var(--clr-brown)/90%);
     transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
     width: 100%;
     height: 100%;
-    margin: auto;
+    /* margin: auto; */
   }
   
   .slides-info-wrapper{
@@ -392,8 +392,6 @@ background-color: hsl(var(--clr-brown)/90%);
 
 .slides{
     min-width: 100%;
-    /* left:0; */
-    /* overflow: hidden; */
 }
 .past-events-wrappers>figure{
     width: 100%;
@@ -444,15 +442,18 @@ background-color: hsl(var(--clr-brown)/90%);
     /* transition-delay: 0.3s; */
     z-index: 3;
 }
-.slides-wrapper[data-slide='1']{
+.slides-wrapper[data-slide='0']{
     transform: translateX(0%);
 }
-.slides-wrapper[data-slide='2']{
+.slides-wrapper[data-slide='1']{
     transform: translateX(-100%);
     }
-.slides-wrapper[data-slide='3']{
+.slides-wrapper[data-slide='2']{
     transform: translateX(-200%);
     }
+.slides-wrapper[data-slide='3']{
+    transform: translateX(-300%);
+}
   /* .slide-1{
     background: url(../assets/images/OG-logo.png) center center / cover no-repeat;
   } */
@@ -465,10 +466,10 @@ background-color: hsl(var(--clr-brown)/90%);
 
   .control-panel{
     background-color: hsl(var(--clr-white-const));
-    width: 6rem;
+    width: 7rem;
     height: 2.25rem;
     border-radius: 50px;
-    gap:0.75rem;
+    gap:0.5rem;
     justify-content:center;
     align-items: center;
     margin:2rem 0;
@@ -481,7 +482,7 @@ background-color: hsl(var(--clr-brown)/90%);
     background-color: hsl(var(--clr-pink));
     transition: all 500ms;
   }
-  .control-panel>.slide-indicators.active{
+  .control-panel>.slide-indicators[data-slide='active']{
     width:1.5rem;
     height:1.5rem;
     background-color: hsl(var(--clr-yellow));
@@ -707,9 +708,9 @@ background-color: hsl(var(--clr-brown)/90%);
     background-color: hsl(var(--clr-orange));
     cursor: pointer;
 }
-.gallery figure:hover{
+/* .gallery figure:hover{
     filter: brightness(0.4);
-}
+} */
 .gallery figure img{
     width: 100%;
     height: 100%;
@@ -718,7 +719,7 @@ background-color: hsl(var(--clr-brown)/90%);
 
     /* object-position: 50% 50%; */
 }
-/* .gallery figure:hover::before{
+.gallery figure:hover::before{
     content: '';
     background: url(../assets/images/icons/zoom-icon.png) center center / cover no-repeat;
     background-size:20rem;
@@ -741,7 +742,7 @@ background-color: hsl(var(--clr-brown)/90%);
     height: 100%;
     z-index: 1;
     background-color: rgb(0, 0, 0,0.8);
-} */
+}
 /* .gallery figure img:hover{
     filter: brightness(0%);
 } */
@@ -798,15 +799,20 @@ background-color: hsl(var(--clr-brown)/90%);
 #gallery-left-arrow,
 #gallery-right-arrow{
     position: absolute;
-    font-weight: 1000;
-    font-size: clamp(1rem,5vw,3rem);
+    /* font-weight: 1000; */
+    font-size: clamp(1rem,5vw,2rem);
      /* cursor: pointer; */
-    width: 5rem;
+    width: 4rem;
     aspect-ratio: 1;
-    background-color: hsl( var(--clr-burgundy)/70%);
+    background-color: hsl( var(--clr-burgundy)/60%);
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    align-content: center;
+}
+#gallery-left-arrow:hover,
+#gallery-right-arrow:hover{
+    background-color: hsl( var(--clr-burgundy)/90%);
 }
 #gallery-left-arrow{
     left:clamp(1rem,5vw,3rem);
@@ -1408,9 +1414,9 @@ footer a:hover{
         /* animation: rotate 2s linear infinite; */
     }
     .past-events-wrappers>figure{
-        width:200%;
-        /* max-width: 25rem;
+        width: clamp(10rem,40vw,22rem);
         flex-shrink:0;
+        /* 
         height:14rem; */
     }
     .gallery{

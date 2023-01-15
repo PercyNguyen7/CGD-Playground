@@ -23,13 +23,9 @@ const slidesWrapper = document.getElementById('slides-wrapper');
 const slideIndicators = document.getElementsByClassName('slide-indicators');
 const imgWrappers = document.getElementsByClassName('img-wrappers');
 
-galleryCloseBtn.addEventListener('click', () => {
-   galleryZoomSect.classList.add('hidden');
-   for (let i = 0; i < activeImgWrapper.length; i++){
-    activeImgWrapper[i].classList.remove('active-img-wrapper');}
-});
 
 
+// For Mobile
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
@@ -57,62 +53,93 @@ menuBtn.addEventListener('click', () => {
     menuOpen = false;
   }
 });
-
+let currentSlide = 0;
 leftArrow.addEventListener('click', () => {
-   
-    if (slidesWrapper.getAttribute("data-slide") == 1){
-    slidesWrapper.setAttribute('data-slide',3);
-    console.log('3');
-    slideIndicators[0].classList.remove('active');
-    slideIndicators[2].classList.add('active');
-    // dsScreen2.setAttribute('data-color',3);
-    } 
-    else if (slidesWrapper.getAttribute("data-slide") == 2){
-        slidesWrapper.setAttribute('data-slide',1);
-        console.log('1');
-        slideIndicators[1].classList.remove('active');
-        slideIndicators[0].classList.add('active');
-        // dsScreen2.setAttribute('data-color',1);
-    } 
-    else if (slidesWrapper.getAttribute("data-slide") == 3){
-        slidesWrapper.setAttribute('data-slide',2);
-        console.log('2');
-        slideIndicators[2].classList.remove('active');
-        slideIndicators[1].classList.add('active');
-        // dsScreen2.setAttribute('data-color',2);
-    } 
+    if (currentSlide >0 ){
+        currentSlide--;
+    }
+    else if (currentSlide == 0){
+        currentSlide = slidesWrapper.children.length -1;
+    }
+    console.log("current slide is"+currentSlide);
+    // change attribute of slide indicator button to the current slide
+    slidesWrapper.setAttribute('data-slide',currentSlide);
+    for (let i = 0; i < slidesWrapper.children.length; i++){
+        // reset slide indicators
+        slideIndicators[i].setAttribute('data-slide','inactive');;
+    }
+    slideIndicators[currentSlide].setAttribute('data-slide','active');
+    updateSlideInfo()
+;});
+
+// SWITCH BETWEEN THE THREE IMG COMPONENT
+rightArrow.addEventListener('click', () => {
+    if (currentSlide < slidesWrapper.children.length-1){
+        currentSlide++;
+    }
+    else if (currentSlide == slidesWrapper.children.length -1){
+        currentSlide = 0;
+    }
+    console.log("current slide is"+currentSlide);
+    // change attribute of slide indicator button to the current slide
+    slidesWrapper.setAttribute('data-slide',currentSlide);
+    for (let i = 0; i < slidesWrapper.children.length; i++){
+        // reset slide indicators
+        slideIndicators[i].setAttribute('data-slide','inactive');;
+    }
+    slideIndicators[currentSlide].setAttribute('data-slide','active');
+    updateSlideInfo();
+//     if (slidesWrapper.getAttribute("data-slide") == 1){
+    
+//     slidesWrapper.setAttribute('data-slide',2);
+//     console.log('2');
+//     // for (let n=0 ; n < slideIndicators.length; n++){
+       
+//     // }
+//     slideIndicators[0].classList.remove('active');
+//     slideIndicators[1].classList.add('active');
+//     // dsScreen2.setAttribute('data-color',2);
+//     } 
+//     else if (slidesWrapper.getAttribute("data-slide") == 2){
+//         slidesWrapper.setAttribute('data-slide',3);
+//         console.log('3');
+//         slideIndicators[1].classList.remove('active');
+//         slideIndicators[2].classList.add('active');
+//         // dsScreen2.setAttribute('data-color',3);
+//     } 
+//     else if (slidesWrapper.getAttribute("data-slide") == 3){
+//         slidesWrapper.setAttribute('data-slide',1);
+//         console.log('1');
+//         slideIndicators[2].classList.remove('active');
+//         slideIndicators[0].classList.add('active');
+//         // dsScreen2.setAttribute('data-color',1);
+//     } 
 });
 
-rightArrow.addEventListener('click', () => {
-   
-    if (slidesWrapper.getAttribute("data-slide") == 1){
-    
-    slidesWrapper.setAttribute('data-slide',2);
-    console.log('2');
-    // for (let n=0 ; n < slideIndicators.length; n++){
-       
-    // }
-    slideIndicators[0].classList.remove('active');
-    slideIndicators[1].classList.add('active');
-    // dsScreen2.setAttribute('data-color',2);
-    } 
-    else if (slidesWrapper.getAttribute("data-slide") == 2){
-        slidesWrapper.setAttribute('data-slide',3);
-        console.log('3');
-        slideIndicators[1].classList.remove('active');
-        slideIndicators[2].classList.add('active');
-        // dsScreen2.setAttribute('data-color',3);
-    } 
-    else if (slidesWrapper.getAttribute("data-slide") == 3){
-        slidesWrapper.setAttribute('data-slide',1);
-        console.log('1');
-        slideIndicators[2].classList.remove('active');
-        slideIndicators[0].classList.add('active');
-        // dsScreen2.setAttribute('data-color',1);
-    } 
-});
+const eventTitle = document.querySelector('#event-title');
+const eventDescription = document.querySelector('#event-description');
+
+function updateSlideInfo(){
+    if (currentSlide ==0){
+        eventTitle.innerHTML='Start of Semester Meetup';
+        eventDescription.innerHTML='More Details coming soon';
+    }
+    else if (currentSlide ==1){
+        eventTitle.innerHTML='Weekly Meetups';
+        eventDescription.innerHTML='More Details coming soon';
+    }
+    else if (currentSlide ==2){
+        eventTitle.innerHTML='TBD';
+        eventDescription.innerHTML='More Details coming soon';
+    }
+    else if (currentSlide ==3){
+        eventTitle.innerHTML='TBD';
+        eventDescription.innerHTML='More Details coming soon';
+    }
+}
 
 let currentImgCounter = 0;
+
 for (let n = 0; n < imgWrappers.length; n++){
     imgWrappers[n].addEventListener('click', () =>{ 
         galleryZoomSect.classList.remove('hidden');
@@ -121,12 +148,20 @@ for (let n = 0; n < imgWrappers.length; n++){
         currentImgCounter = n;
         console.log("img #"+ n);
         updateImg();
+        img1.src = activeImgWrapper[0].children[0].src;
         img2.src = activeImgWrapper[0].children[0].src;
+        img3.src = activeImgWrapper[0].children[0].src;
         // imgWrappers[n].classList.add('active-img-wrapper');
         // galleryZoomSect.children[0].children[0].src = activeImgWrapper[0].children[0].src;
     });
 }
-
+galleryCloseBtn.addEventListener('click', () => {
+    galleryZoomSect.classList.add('hidden');
+    // for (let i = 0; i < activeImgWrapper.length; i++){
+    //  activeImgWrapper[i].classList.remove('active-img-wrapper');}
+    updateImg();
+ });
+ 
 galleryRightArrow.addEventListener('click',()=>{
     // if current img is less than 
     if (currentImgCounter < imgWrappers.length -1){
@@ -156,13 +191,14 @@ function resetActiveImgWrapper(){
     for (let i = 0; i < prevImgWrapper.length; i++){
         prevImgWrapper[i].classList.remove('prev-img-wrapper');}
     for (let i = 0; i < nextImgWrapper.length; i++){
-        nextImgWrapper[i].classList.remove('next-img-wrapper');}    
+        nextImgWrapper[i].classList.remove('next-img-wrapper');} 
 }
 //This is the 
 
 let img1 =galleryZoomSect.children[0].children[0];
 let img2 =galleryZoomSect.children[0].children[1];
 let img3 =galleryZoomSect.children[0].children[2];
+
 // Update current Active Img on the Gallery Section
 function updateImg(){
         imgWrappers[currentImgCounter].classList.add('active-img-wrapper');
@@ -189,7 +225,7 @@ function slideRightImg(){
         img3.classList.remove('next-img','invisible');
         img3.classList.add('current-img');
 
-            img3.src =activeImgWrapper[0].children[0].src;
+            img3.src = activeImgWrapper[0].children[0].src;
             if(nextImgWrapper.length !=0){
                 img1.src =nextImgWrapper[0].children[0].src;
             }
@@ -248,7 +284,7 @@ animatedHeadings.forEach((heading)=>{
             easing: 'linear',
             timeline: new ScrollTimeline({
                 scrollOffsets:[
-                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight -100),
+                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight -200),
                             CSS.px(headingOffsetTop -550),
                         ],
             }),
