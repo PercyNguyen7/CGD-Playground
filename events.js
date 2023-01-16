@@ -29,7 +29,7 @@ const imgWrappers = document.getElementsByClassName('img-wrappers');
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
-    primaryNav.classList.add('open');
+    primaryNav.setAttribute('data-open',true);
     tabsWrappers[0].classList.add('slide-in-right-1');
     tabsWrappers[1].classList.add('slide-in-right-2');
     tabsWrappers[2].classList.add('slide-in-right-3');
@@ -41,7 +41,7 @@ menuBtn.addEventListener('click', () => {
     menuOpen = true;
   } else {
     menuBtn.classList.remove('open');
-    primaryNav.classList.remove('open');
+    primaryNav.setAttribute('data-open',false);
     tabsWrappers[0].classList.remove('slide-in-right-1');
     tabsWrappers[1].classList.remove('slide-in-right-2');
     tabsWrappers[2].classList.remove('slide-in-right-3');
