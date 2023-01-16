@@ -121,7 +121,7 @@ animatedMembers.forEach((image)=>{
         image.animate(
           
             {   
-              transform: ['translateY(0)', 'translateY(-11rem)'], 
+              transform: ['translateY(0)', 'translateY(-12rem)'], 
             //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
             //   opacity: ['0.6','1']
             },
@@ -131,7 +131,7 @@ animatedMembers.forEach((image)=>{
                 timeline: new ScrollTimeline({
                     scrollOffsets:[
     
-                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-200),
+                        CSS.px(imgOffsetTop + imgOffsetHeight - window.innerHeight-100),
                         CSS.px(imgOffsetTop+600),
                         ],
                     // scrollOffsets: [CSS.percent(60), CSS.percent(80)],

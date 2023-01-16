@@ -275,7 +275,7 @@ animatedHeadings.forEach((heading)=>{
     const headingOffsetHeight = heading.offsetHeight;
     heading.animate(
         {   
-          transform: ['translateX(100px)', 'translateX(0px)'], 
+          transform: ['translateX(40px)', 'translateX(0px)'], 
         //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
           opacity: ['0.3','1']
         },

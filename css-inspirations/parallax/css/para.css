@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: crimson;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+#man {
+    width: 30%;
+    min-width: 300px;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    transform: rotate(45deg);
+}
+
+#astro {
+    width: 30%;
+    min-width: 300px;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    transform: rotate(0deg);
+}
+
+h1 {
+    color: #eee;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22vmax;
+    line-height: 20vmax;
+    font-family: abolition, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}

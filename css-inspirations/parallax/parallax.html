@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/jit3tcn.css">
+    <link rel="stylesheet" href="css/para.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1>parallax scrolling</h1>
+    </section>
+
+    <section class="container">
+        <h1>as easy as falling up</h1>
+        <img src="img/man.png" alt="falling man" id="man">
+    </section>
+
+    <section class="container">
+        <h1>check out the code and see</h1>
+        <img src="img/astronaut.png" alt="zero g" id="astro">
+    </section>
+
+    <script>
+        const man = document.getElementById('man');
+        const astro = document.getElementById('astro');
+
+        window.addEventListener("scroll", () => {
+            let offset = window.scrollY;
+            console.log(offset);
+            man.style.bottom = offset * 0.9 + 'px';
+            // astro.style.bottom = offset * 0.5 + 'px';
+            // astro.style.left = offset * 0.5 + 'px';
+            // astro.style.transform =  "rotate(" + offset * 0.2 + "deg)";
+            //astro.style.transform = 'translateY(' + '-' + offset * 0.5 + 'px)';
+            //astro.style.transform = `translate(${offset * 0.2}px, -${offset * 0.5}px) rotate(${offset * 0.02}deg)`;
+            astro.style.transform = `translateY(-${offset * 0.5}px) rotate(${offset * 0.02}deg)`;
+            // higher % scrolls faster
+        });
+
+    </script>
+</body>
+
+</html>
