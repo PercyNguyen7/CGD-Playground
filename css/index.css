@@ -167,7 +167,6 @@ text-transform: uppercase;} */
   .ff-title{font-family: 'LeagueSpartan',sans-serif;}
   html,body{
     /* cursor:none; */
-
     scroll-behavior: smooth;
   }
   section{
@@ -176,8 +175,7 @@ text-transform: uppercase;} */
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
-    min-height: 100vh;
-
+    position: relative;
   }
   header{
     z-index: 9000;
