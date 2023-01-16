@@ -170,6 +170,9 @@ text-transform: uppercase;} */
 
     scroll-behavior: smooth;
   }
+  section{
+    overflow-x:hidden;
+  }
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
