@@ -169,11 +169,9 @@ text-transform: uppercase;} */
     /* cursor:none; */
     scroll-behavior: smooth;
   }
-  section{
-    overflow-x:hidden;
-  }
+
   body {
-    background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
+    background: black;
     overflow-x: hidden;
     position: relative;
   }
