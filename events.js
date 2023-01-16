@@ -284,8 +284,8 @@ animatedHeadings.forEach((heading)=>{
             easing: 'linear',
             timeline: new ScrollTimeline({
                 scrollOffsets:[
-                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight -200),
-                            CSS.px(headingOffsetTop -550),
+                            CSS.px(headingOffsetTop + headingOffsetHeight - window.innerHeight-200),
+                            CSS.px(headingOffsetTop -400),
                         ],
             }),
         }
