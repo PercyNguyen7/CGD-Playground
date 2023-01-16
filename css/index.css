@@ -177,7 +177,7 @@ text-transform: uppercase;} */
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
     min-height: 100vh;
-    position: relative;
+
   }
   header{
     z-index: 9000;
@@ -221,7 +221,6 @@ p{
     background: url(../assets/images/bg-stars.png) center center  repeat;
 }
 .primary-navigation{
-    background-color: hsl(var(--clr-burgundy));
     position: fixed;
     flex-direction: column;
     justify-content: space-around;
@@ -233,6 +232,7 @@ p{
     transform:translateX(100%);
     opacity: 0;
     transition: all 0.2s ease-in-out;
+    background-color: hsl(var(--clr-burgundy));
     z-index: 9000;
 }
 
@@ -256,13 +256,14 @@ p{
 
 #spotlight-sect{
   margin-top:3rem;
-  background-color: hsl(var(--clr-brown) /70%);
+
   width: 100%;
   text-align: center;
   /* height: 10rem; */
   padding: 4rem 0rem 3rem;
   overflow-x: hidden;
   border-bottom: hsl(var(--clr-ds-border)) 2px solid;
+  background-color: hsl(var(--clr-brown) /70%);
   /* transition-delay: 0.1s; */
 }
 
