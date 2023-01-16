@@ -172,7 +172,7 @@ text-transform: uppercase;} */
 
   body {
     background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
-    background: linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
+    background: -webkit-linear-gradient(hsl(var(--clr-burgundy)) ,hsl(var(--clr-brown)));
     overflow-x: hidden;
     position: relative;
   }
