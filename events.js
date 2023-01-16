@@ -342,7 +342,7 @@ if (mediaQuery.matches) {
   // Then trigger an alert
   dsRotate.animate(
     {
-     transform: ["perspective(1000px) rotateX(-40deg) rotateY(10deg) translateY(-100px) scale(0.6)","perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)"] ,
+     transform: ["perspective(1000px) rotateX(-40deg) rotateY(10deg) translateY(-225px) scale(0.4)","perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)"] ,
     //   opacity:['0.4','1'] 
     },
     {

@@ -243,7 +243,7 @@ p{
   /* height: 10rem; */
   padding: 4rem 0rem 3rem;
   overflow-x: hidden;
-  /* border-bottom: hsl(var(--clr-ds-border)) 1px solid; */
+  border-bottom: hsl(var(--clr-ds-border)) 2px solid;
   /* transition-delay: 0.1s; */
 }
 #page-heading{
@@ -259,6 +259,9 @@ p{
 
 .past-events-wrappers:hover h3{
     text-decoration: underline;
+}
+.ds-wrapper{
+    margin: 4rem 0;
 }
 .left-controls-ds{
     width: clamp(3rem, 10vw, 6rem);
