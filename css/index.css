@@ -177,17 +177,17 @@ text-transform: uppercase;} */
     overflow-x: hidden;
     /* min-height: 100vh; */
     position: relative;
+    height:100%;
   }
   /* Safari 7.1+ */
 
 /* Safari 10.1+ */
 
-@media not all and (min-resolution:.001dpcm) { @media {
-
+/* @media not all and (min-resolution:.001dpcm) { @media {
     body { 
         background: linear-gradient(black,black);
     }
-}}
+}}; */
   header{
     z-index: 9000;
   }
