@@ -33,8 +33,10 @@
 
     /* dark mode palette */
     /* --clr-brown: 302 69% 9%;  */
-    --clr-burgundy: 304 95% 7%;
-    --clr-brown: 216 95% 10%;
+    --clr-bg-top: 304 95% 8%;
+    --clr-bg-bottom: 216 95% 12%;
+    --clr-burgundy: 304 95% 8%;
+    --clr-brown: 216 95% 12%;
     --clr-nav-text: 240 0% 95%;
     --clr-white: 240 0% 95%;
     --clr-orange: 343 67% 58%;
@@ -74,19 +76,21 @@
     --ff-sans-normal: "Barlow", sans-serif; */
 }
 .light-mode{
-    --clr-burgundy: 281 34% 62%;
-    --clr-brown: 311 45% 93%;
+    --clr-bg-top: 343 90% 85%;
+    --clr-bg-bottom: 320 45% 95%;
+    --clr-burgundy: 343 61% 52%;
+    --clr-brown: 320 45% 95%;
     /* --clr-nav-text: 343 70% 17%; */
     --clr-nav-text: 240 0% 95%;
-    --clr-white: 300 30% 20%;
-    --clr-orange: 345 70% 64%;
+    --clr-white: 300 30% 30%;
+    --clr-orange: 320 70% 95%;
     --clr-pink: 343 61% 52%;
     --clr-ds: 311 45% 69%;
     --clr-ds-border:343 40% 30%; 
     --fw-normal: 600;
     --clr-scr-bg: 240 0% 95%; 
 }
-.light-pink-filters{
+.svg-filters{
     /* filter: invert(59%) sepia(21%) saturate(1098%) hue-rotate(293deg) brightness(92%) contrast(85%); */
     filter: invert(72%) sepia(48%) saturate(2813%) hue-rotate(298deg) brightness(95%) contrast(100%);  
 }
@@ -122,7 +126,7 @@ text-transform: uppercase;} */
   .light-mode-toggle{
     position: fixed;
     padding: 3px;
-    width: 3rem;
+    width: 2rem;
     aspect-ratio: 1/2;
     border-radius: 25px;
     top: 4rem;
@@ -136,7 +140,8 @@ text-transform: uppercase;} */
         aspect-ratio: 1;
         border-radius: 25px;
         background-color: hsl( var(--clr-brown));
-        transform: translateY(47px);
+    
+        transform: translateY(32px);
         transition: all 0.3s ease-in-out;
         justify-content: center;
         align-items: center;
@@ -172,22 +177,27 @@ text-transform: uppercase;} */
 
   body {
     /* background: linear-gradient(black, rgb(89, 89, 89)); */
-    background: linear-gradient(hsl(var(--clr-burgundy)) , hsl(var(--clr-brown)));
-    -webkit-background: linear-gradient(hsl(var(--clr-burgundy)) , hsl(var(--clr-brown)));
+    background: linear-gradient(hsl(var(--clr-bg-top)) , hsl(var(--clr-bg-bottom)));
+    background-color: hsl( var(--clr-pink));;
     overflow-x: hidden;
-    /* min-height: 100vh; */
-    position: relative;
+    min-height: 100vh;
+    /* position: relative; */
+    width: 100%;
     height:100%;
   }
   /* Safari 7.1+ */
 
 /* Safari 10.1+ */
 
-/* @media not all and (min-resolution:.001dpcm) { @media {
+/* @media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) {
+
     body { 
-        background: linear-gradient(black,black);
+        background: -webkit-linear-gradient(hsl(var(--clr-burgundy)) , hsl(var(--clr-brown)));
+
     }
-}}; */
+}} */
+
   header{
     z-index: 9000;
   }
@@ -270,7 +280,7 @@ p{
   padding: 4rem 0rem 3rem;
   overflow-x: hidden;
   border-bottom: hsl(var(--clr-ds-border)) 2px solid;
-  background-color: hsl(var(--clr-brown) /70%);
+  background-color: hsl(var(--clr-brown) /50%);
   /* transition-delay: 0.1s; */
 }
 
@@ -1096,7 +1106,6 @@ border-radius: 50%;
 .sponsors-cta:hover .cta-mail-wrapper::before{
     width:42rem;
 }
-
 .sponsors-cta:hover{
     border: 2px solid black;
 }
@@ -1268,7 +1277,6 @@ footer a:hover{
     .circles li:nth-child(3){
         display: none;
     }
-    
 }
   @media (min-width: 45em) {
     :root {
@@ -1283,6 +1291,10 @@ footer a:hover{
     .light-mode-toggle{
         top: 5rem;
         right: 3rem;
+        width: 3rem;
+    }
+    .mode-indicator{
+        transform: translateY(47px);
     }
     .scroll-tracker{
         inset: 3rem 0 auto;
@@ -1530,7 +1542,7 @@ footer a:hover{
     }
     .gallery{
         background-color: hsl(var(--clr-burgundy)/ 40%);
-        backdrop-filter: blur(0.5rem);
+        backdrop-filter: blur(1rem);
     }
     .about-horizontal-block{
         background-color: rgb(0, 0, 0,0.5);
@@ -1541,11 +1553,11 @@ footer a:hover{
         backdrop-filter: blur(2rem);
     }
 }
-/* .circles-area{
+.circles-area{
     position:relative;
     height:0vh;
     pointer-events:none;
-} */
+}
 .circles{
     position:absolute;
     bottom: 0;

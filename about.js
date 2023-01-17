@@ -142,7 +142,7 @@ animatedMembers.forEach((image)=>{
     else if(mediaMore85.matches){
         image.animate(
             {   
-              transform: ['translateY(0)', 'translateY(-14rem)'], 
+              transform: ['translateY(0)', 'translateY(-16rem)'], 
             //   color:['hsl(var(--clr-white))','hsl(var(--clr-pink))']
             //   opacity: ['0.6','1']
             },
