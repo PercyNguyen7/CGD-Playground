@@ -343,7 +343,7 @@ if (mediaQuery.matches) {
   // Then trigger an alert
   dsRotate.animate(
     {
-     transform: ["perspective(1000px) rotateX(-40deg) rotateY(10deg) translateY(-225px) scale(0.4)","perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)"] ,
+     transform: ["perspective(1000px) rotateX(-40deg) rotateY(10deg) translateY(-225px) scale(0.4)","perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(0.85)"] ,
     //   opacity:['0.4','1'] 
     },
     {
@@ -352,8 +352,8 @@ if (mediaQuery.matches) {
         // timeline: dsRotateTimeline,
         timeline: new ScrollTimeline({
             scrollOffsets:[
-                CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight-200),
-               CSS.px(dsRotateOffsetTop -80),
+                CSS.px(dsRotateOffsetTop + dsRotateHeight - window.innerHeight-250),
+               CSS.px(dsRotateOffsetTop -40),
            ],
           
             // scrollOffsets:[
