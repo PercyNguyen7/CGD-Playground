@@ -847,11 +847,14 @@ background-color: rgb(210, 210, 210);
 #gallery-right-arrow{
     position: absolute;
     /* font-weight: 1000; */
-    font-size: clamp(1rem,5vw,2rem);
+    font-size: clamp(1.6rem,10vw,8rem);
      /* cursor: pointer; */
     width: 4rem;
+    height:4rem;
     aspect-ratio: 1;
-    background-color: hsl( var(--clr-burgundy)/60%);
+    color:hsl( var(--clr-white)/50%);
+    /* color: rgba(255, 255, 255, 0.589); */
+    /* background-color: rgb(0, 0, 0,0.1); */
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -859,7 +862,10 @@ background-color: rgb(210, 210, 210);
 }
 #gallery-left-arrow:hover,
 #gallery-right-arrow:hover{
-    background-color: hsl( var(--clr-burgundy)/90%);
+    color:hsl( var(--clr-white)/100%);
+    /* color: rgba(255, 255, 255, 1); */
+    /* background-color: rgb(0, 0, 0,0.4); */
+    /* background-color: hsl( var(--clr-burgundy)/90%); */
 }
 #gallery-left-arrow{
     left:clamp(1rem,5vw,3rem);
